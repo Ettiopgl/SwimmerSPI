@@ -47,7 +47,6 @@ void setup(){
 void loop(){
   if (was_passed){
     s.autoStep(true);
-    //Non sono passati più TIMER1 millisecondi.
     was_passed = false;
     cron = 0;
   }
