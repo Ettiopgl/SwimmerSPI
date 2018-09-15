@@ -35,8 +35,6 @@ void base_dei_tempi(){
   if (cron >= TIMER1)
     was_passed = true;
 }
-//Swimmer s2 (5, 0, 1, 0, 255, 0, 4 ,2, 2);
-//Swimmer s3 (5, 0, 1, 0, 0, 255, 4, 2, 2);
 
 void setup(){
   Serial.begin(115200);
