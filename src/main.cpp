@@ -1,6 +1,4 @@
 
-// ùANDREA GIUSTI //
-
 #include <Arduino.h>
 #include <Swimmer.h>
 #include <MsTimer2.h>   // eventualmente usare flextimer2
