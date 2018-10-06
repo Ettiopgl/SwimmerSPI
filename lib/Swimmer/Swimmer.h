@@ -15,7 +15,7 @@ class Swimmer{
   //  static Adafruit_NeoPixel * strip;
     unsigned int nLed, pos, step, r, g, b, nVasche = 1, nRipetizioni = 0, nSerie = 0, totVasche , totRip, nSerieTotRag, totSerie;
     bool isRipRagg = false, isSerieRagg = false, isSerieTotRagg = false, firsTime = false;
-
+unsigned long previousMillis;  // variabile recupero ripetizioni
   public:
 
 
@@ -56,6 +56,12 @@ static void setStrip(SPIStrip * strip_new);
     void autoStep(bool autoLightUp);
 
     void isFirstTime();
+
+    void timeRecRipetizioni(unsigned long recuperoRip);
+
+    void blinkSwimmer(long int);
+
+
 
 };
 

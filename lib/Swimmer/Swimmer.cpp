@@ -101,6 +101,7 @@ unsigned int Swimmer::getPos(){
 bool Swimmer::isFinishRip(){
 
   return isRipRagg;
+
 }
 
 bool Swimmer::isFinishSerie(){
@@ -126,9 +127,11 @@ void Swimmer::autoStep(bool autoLightUp = false){ // contollo andata e ritorno
   }
 }
 
-void Swimmer::resetRip(){
+void Swimmer::resetRip(){ // reset della ripetizione 100m=4=nVasche
   nVasche = 1;
   isRipRagg = false;
+
+  delay(1000); // pausa dopo totVasche
 
 }
 
@@ -137,13 +140,53 @@ void Swimmer::resetSerie(){
   nVasche = 1;
   nRipetizioni = 0;
   isSerieRagg = false;
+
 }
 
 void Swimmer::resetSerieTot(){
   resetSerie();
   nSerie = 0;
   isSerieTotRagg = false;
+
 }
+
+void Swimmer::timeRecRipetizioni(unsigned long recRip){
+  unsigned long start = millis();
+  while (millis() - start <recRip){
+
+    blinkSwimmer(500); // tempo in ms blink di accensione e spegnimento segmento quando è fermo
+  }
+}
+
+void Swimmer:: blinkSwimmer(long intervallo){
+  if(millis() - previousMillis >intervallo){
+
+
+    //strip->setPixelColor(pos, r, g, b, nLed);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+    strip->setPixelColor(1, 150, 150, 0,5);
+
+
+    previousMillis = millis();
+  }
+  else
+
+  //strip->setPixelColor(pos, 0, 0, 0, nLed);
+  strip->setPixelColor(1, 0, 0, 0, 5);
+}
+
+
 
 /*  void Swimmer::isFirstTime(){
 if (firsTime == true && downStart == false ){
