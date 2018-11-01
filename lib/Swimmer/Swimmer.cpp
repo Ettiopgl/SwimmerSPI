@@ -1,9 +1,7 @@
 #include "Swimmer.h"
 //Adafruit_NeoPixel *Swimmer::strip;
 
-Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totserie, unsigned int p_strip_length, unsigned int p_delay_step){
-  /*firsTime = firstTime;
-  */
+Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totserie, unsigned int p_strip_length, unsigned int p_delay_step, unsigned int p_delay_vasche){
   totVasche = totvasche +1;
   totRip = totrip;
   totSerie = totserie;
@@ -14,6 +12,7 @@ Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, u
   b = p_b;
   strip_length = p_strip_length;
   delay_step = p_delay_step;
+  delay_vasche = p_delay_vasche;
 }
 
 unsigned int Swimmer::getNled(){
@@ -28,7 +27,11 @@ void Swimmer::doStep(){
 
   if (pos >= strip_length-1){ //Fine vasca
     nVasche++;
-    if (nVasche == totVasche){
+    if (nVasche == totVasche){ //Fine serie vasche
+      if (delay_vasche > 0){ //Attendo delay_vasche
+        time_call = 0;
+        delay_step = delay_vasche;
+      }
       isRipRagg = true;
       nVasche = 1;
       nRipetizioni++;
@@ -53,6 +56,9 @@ void Swimmer::undoStep(){
     nVasche++;
     time_call = 0;
     if (nVasche == totVasche){
+      if (delay_vasche > 0){
+        delay_step = delay_vasche;
+      }
       isRipRagg = true;
       nVasche = 1;
       nRipetizioni++;

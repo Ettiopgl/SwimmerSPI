@@ -7,19 +7,24 @@
 #include <SPI.h>
 #define PRINTLED(R,G,B) SPI.transfer(R);SPI.transfer(G);SPI.transfer(B);
 
-#define LENSTRIP 164 // lungheza della striscia
+// lungheza della striscia
+#define LENSTRIP 164
 #define RESOLUTION 1.0/10000
-#define MCD 910  //  910=0,1 Millisecondi di chiamata passo per passo 15 sec ogni 25m =164
-#define DECIMAL_TIMER 1  //Ogni secondo autostep  3...
-#define DELAY_SWIMMER_1 10
-#define DELAY_SWIMMER_2 20
+//  910=0,1 Millisecondi di chiamata passo per passo 15 sec ogni 25m =164
+#define MCD 910
+#define DECIMAL_TIMER 1
+#define DELAY_START_SWIMMER_1 100 //Pausa iniziale
+#define DELAY_START_SWIMMER_2 200
+#define DELAY_FOREACH_SERIES_1 200 //Pausa per ogni serie di vasche
+#define DELAY_FOREACH_SERIES_2 200
 
 Swimmer s   (5, 0, 1, 255,  0,  0, 4, 2, 2, LENSTRIP, 0);
-Swimmer s2   (3, 0, 1, 0,  255,  0, 4, 2, 2, LENSTRIP, DELAY_SWIMMER_1);
-Swimmer s3   (3, 0, 1, 0,  0,  255, 4, 2, 2, LENSTRIP, DELAY_SWIMMER_2);
+Swimmer s2   (3, 0, 1, 0,  255,  0, 4, 2, 2, LENSTRIP, DELAY_START_SWIMMER_1, DELAY_FOREACH_SERIES_1);
+Swimmer s3   (3, 0, 1, 0,  0,  255, 4, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, DELAY_FOREACH_SERIES_2);
 volatile unsigned long count_times = 0;
-volatile bool to_print = false;
+volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 
+//Funzione che gestisce i colori da applicare a ciascun led della striscia.
 void printStrip(){
   SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));
   for (unsigned int i=0; i<LENSTRIP; i++){

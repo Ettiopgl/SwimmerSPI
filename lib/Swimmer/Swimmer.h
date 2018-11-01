@@ -8,7 +8,7 @@ class Swimmer{
   private:
 
   //  static Adafruit_NeoPixel * strip;
-    unsigned int nLed, pos, step, r, g, b, nVasche = 1, nRipetizioni = 0, nSerie = 0, totVasche , totRip, nSerieTotRag, totSerie, strip_length, delay_step;
+    unsigned int nLed, pos, step, r, g, b, nVasche = 1, nRipetizioni = 0, nSerie = 0, totVasche , totRip, nSerieTotRag, totSerie, strip_length, delay_step, delay_vasche;
     bool isRipRagg = false, isSerieRagg = false, isSerieTotRagg = false, firsTime = false, blink =true,goSwim = true;
 unsigned long previousMillis; // partenza rec ripetizioni;  // variabile recupero ripetizioni
 
@@ -20,7 +20,7 @@ unsigned long recRip,tstart;
     bool downStart = false; //parte dalla vasca di ritorno
     //  p_goSwim      parti swimmer!
 
-    Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totserie, unsigned int p_strip_length, unsigned int p_delay_step = 0);
+    Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totserie, unsigned int p_strip_length, unsigned int p_delay_step = 0, unsigned int p_delay_vasche = 0);
 
     unsigned int getNled();
 
