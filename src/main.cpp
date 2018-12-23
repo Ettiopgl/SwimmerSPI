@@ -11,16 +11,18 @@
 #define LENSTRIP 164
 #define RESOLUTION 1.0/10000
 //  910=0,1 Millisecondi di chiamata passo per passo 15 sec ogni 25m =164
-#define MCD 910
-#define DECIMAL_TIMER 1
-#define DELAY_START_SWIMMER_1 100 //Pausa iniziale
-#define DELAY_START_SWIMMER_2 200
-#define DELAY_FOREACH_SERIES_1 200 //Pausa per ogni serie di vasche
-#define DELAY_FOREACH_SERIES_2 200
+#define MCD 18 // 18= (15sec/25m =passo al metro x5m attuali=3sec /164 led= 18ms= passo reale per 5m
+#define DECIMAL_TIMER 10
+#define dStartSwimmer 30 //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_START_SWIMMER_2 60 //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_FOREACH_REPETITION 824 // = 15sec/passo 15/0.018 =824
+#define DELAY_FOREACH_SERIES 3296 //Pausa per ogni serie di vasche =60/0.018=3296
 
-Swimmer s   (5, 0, 1, 255,  0,  0, 4, 2, 2, LENSTRIP, 0);
-Swimmer s2   (3, 0, 1, 0,  255,  0, 4, 2, 2, LENSTRIP, DELAY_START_SWIMMER_1, DELAY_FOREACH_SERIES_1);
-Swimmer s3   (3, 0, 1, 0,  0,  255, 4, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, DELAY_FOREACH_SERIES_2);
+//p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, totvasche= numero vasche,totrip=numero ripetizioni,totSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
+
+Swimmer s   (5, 0, 1, 255,  0,  0, 2, 2, 2, LENSTRIP, 0,DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
+Swimmer s2   (5, 0, 1, 0,  255,  0, 2, 2, 2, LENSTRIP, dStartSwimmer, DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
+Swimmer s3   (5, 0, 1, 0,  0,  255, 2 , 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
 volatile unsigned long count_times = 0;
 volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 
@@ -40,7 +42,7 @@ void printStrip(){
       }
   }
   SPI.endTransaction();
-  delayMicroseconds(510);
+  delayMicroseconds(511);
 }
 
 void base_dei_tempi(){

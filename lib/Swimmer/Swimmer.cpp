@@ -1,18 +1,19 @@
 #include "Swimmer.h"
 //Adafruit_NeoPixel *Swimmer::strip;
-
-Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totserie, unsigned int p_strip_length, unsigned int p_delay_step, unsigned int p_delay_vasche){
-  totVasche = totvasche +1;
-  totRip = totrip;
-  totSerie = totserie;
-  nLed = p_nLed;
-  step = p_step;
+//                    p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, totvasche= numero vasche,totrip=numero ripetizioni,totSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
+Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totSecSerie, unsigned int p_strip_length, unsigned int p_delay_step, unsigned int p_delay_repetition, unsigned int p_delay_series){
+  totVasche = totvasche +1; // numero di vasche per ripetizione
+  totRip = totrip;  // totale ripetizioni
+  totSecSerie = totSecSerie; // totale serie
+  nLed = p_nLed; // numero led segmento
+  step = p_step; // numero degli step  (salto tra un led e l'altro )
   r = p_r;
   g = p_g;
   b = p_b;
-  strip_length = p_strip_length;
+  strip_length = p_strip_length;  //linghezza striscia
   delay_step = p_delay_step;
-  delay_vasche = p_delay_vasche;
+  delay_repetition = p_delay_repetition;
+  delay_series = p_delay_series;
 }
 
 unsigned int Swimmer::getNled(){
@@ -27,18 +28,28 @@ void Swimmer::doStep(){
 
   if (pos >= strip_length-1){ //Fine vasca
     nVasche++;
-    if (nVasche == totVasche){ //Fine serie vasche
-      if (delay_vasche > 0){ //Attendo delay_vasche
+    if (nVasche == totVasche){ //Fine Ripetizione 50..100 così via
+      if (delay_repetition > 0){ //Attendo delay_repetition
         time_call = 0;
-        delay_step = delay_vasche;
+        delay_step = delay_repetition;
       }
       isRipRagg = true;
       nVasche = 1;
       nRipetizioni++;
       if (nRipetizioni == totRip){
+
+        if (delay_series > 0){ //Attendo delay_series
+          time_call = 0;
+          delay_step = delay_series;
+        }
+
         isSerieRagg = true;
         nSerie++;
-        if (nSerie == totSerie){
+        if (nSerie == totSecSerie){  // QUI DEVE FERMARSI DEFINITIVAMENTE
+          if (delay_series > 0){ //Attendo delay_series
+            time_call = 0;
+            delay_step = delay_series*10; // QUI DEVE FERMARSI DEFINITIVAMENTE
+          }
           isSerieTotRagg = true;
         }
       }
@@ -56,8 +67,8 @@ void Swimmer::undoStep(){
     nVasche++;
     time_call = 0;
     if (nVasche == totVasche){
-      if (delay_vasche > 0){
-        delay_step = delay_vasche;
+      if (delay_repetition > 0){
+        delay_step = delay_repetition;
       }
       isRipRagg = true;
       nVasche = 1;
@@ -65,9 +76,19 @@ void Swimmer::undoStep(){
 
       if (nRipetizioni == totRip){
 
+        if (delay_series > 0){ //Attendo delay_series
+          time_call = 0;
+          delay_step = delay_series;
+        }
+
         nSerie++;
         isSerieRagg = true;
-        if (nSerie == totSerie){
+        if (nSerie == totSecSerie){  // QUI DEVE FERMARSI DEFINITIVAMENTE
+          if (delay_series > 0){ //Attendo delay_series
+            time_call = 0;
+            delay_step = delay_series; // QUI DEVE FERMARSI DEFINITIVAMENTE
+          }
+
           isSerieRagg = true;
         }
 
@@ -120,14 +141,14 @@ void Swimmer::resetRip(){ // reset della ripetizione 100m=4=nVasche
   isRipRagg = false;
 }
 
-void Swimmer::resetSerie(){
+void Swimmer::resetSecSerie(){
   nVasche = 1;
   nRipetizioni = 0;
   isSerieRagg = false;
 }
 
-void Swimmer::resetSerieTot(){
-  resetSerie();
+void Swimmer::resetSecSerieTot(){
+  resetSecSerie();
   nSerie = 0;
   isSerieTotRagg = false;
 }
