@@ -4,54 +4,52 @@
 #include <Arduino.h>
 
 //Qua bisogna fare il commento della classe.
-class Swimmer{
-  private:
-
+class Swimmer
+{
+private:
   //  static Adafruit_NeoPixel * strip;
-    unsigned int nLed, pos, step, r, g, b, nVasche = 1, nRipetizioni = 0, nSerie = 0, totVasche , totRip, nSerieTotRag, totSecSerie, strip_length, delay_step, delay_repetition,delay_series;
-    bool isRipRagg = false, isSerieRagg = false, isSerieTotRagg = false, firsTime = false, blink =true,goSwim = true;
-unsigned long previousMillis; // partenza rec ripetizioni;  // variabile recupero ripetizioni
+  unsigned int nLed, pos, step, r, g, b, nVasche = 1, nRipetizioni = 0, nSerie = 0, totVasche, totRip, nSerieTotRag, totSecSerie, strip_length, delay_step, delay_repetition, delay_series;
+  bool isRipRagg = false, isSerieRagg = false, isSerieTotRagg = false, firsTime = false, blink = true, goSwim = true;
+  unsigned long previousMillis; // partenza rec ripetizioni;  // variabile recupero ripetizioni
 
   unsigned int time_call = 0; //variabile che mi tiene conto di quante volte è stata chiamata la funzione autostep.
-  public:
+public:
+  unsigned long recRip, tstart;
 
-unsigned long recRip,tstart;
+  bool downStart = false; //parte dalla vasca di ritorno
+  //  p_goSwim      parti swimmer!
 
-    bool downStart = false; //parte dalla vasca di ritorno
-    //  p_goSwim      parti swimmer!
+  Swimmer();
 
-    Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totSecSerie, unsigned int p_strip_length, unsigned int p_delay_step = 0, unsigned int p_delay_repetition = 0,unsigned int p_delay_series =0);
+  void init(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totSecSerie, unsigned int p_strip_length, unsigned int p_delay_step = 0, unsigned int p_delay_repetition = 0, unsigned int p_delay_series = 0);
 
-    unsigned int getNled();
+  unsigned int getNled();
 
-    unsigned int getLength();
+  unsigned int getLength();
 
-    unsigned int getPos();
+  unsigned int getPos();
 
-    void doStep();
+  void doStep();
 
-    void undoStep();
+  void undoStep();
 
-    unsigned int getNvasche();
+  unsigned int getNvasche();
 
-    bool isFinishRip();
+  bool isFinishRip();
 
-    bool isFinishSerie();
+  bool isFinishSerie();
 
-    void resetRip();
+  void resetRip();
 
-    void resetSecSerie();
+  void resetSecSerie();
 
-    bool isFinishSerieTot();
+  bool isFinishSerieTot();
 
-    void resetSecSerieTot();
+  void resetSecSerieTot();
 
-    void autoStep();
+  void autoStep();
 
-    void isFirstTime();
-
-
-
+  void isFirstTime();
 };
 
 #endif
