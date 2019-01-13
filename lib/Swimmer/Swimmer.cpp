@@ -1,4 +1,5 @@
 #include "Swimmer.h"
+
 //Adafruit_NeoPixel *Swimmer::strip;
 //                    p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, totvasche= numero vasche,totrip=numero ripetizioni,totSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
 Swimmer::Swimmer(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int totvasche, unsigned int totrip, unsigned int totSecSerie, unsigned int p_strip_length, unsigned int p_delay_step, unsigned int p_delay_repetition, unsigned int p_delay_series){
