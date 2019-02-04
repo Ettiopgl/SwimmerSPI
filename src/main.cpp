@@ -17,7 +17,7 @@
 //#define MCD 18 // 18= (15sec/25m =passo al metro x5m attuali=3sec /164 led= 18ms= passo reale per 5m
 #define MCD 1 // PER RISOLUZIONE DI 0,1 ms
 //#define DECIMAL_TIMER 10
-#define DECIMAL_TIMER 800// 180 PASSO PER AVER VELOCITA DI 15SEC SU 25M
+#define DECIMAL_TIMER 180//  PASSO PER AVER VELOCITA DI 15SEC SU 25M con 800 non va in errore 
 #define DELAY_START_SWIMMER 30        //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_2 60      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_3 90      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
