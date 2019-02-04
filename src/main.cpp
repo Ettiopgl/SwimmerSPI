@@ -11,17 +11,18 @@
   SPI.transfer(B);
 
 // lungheza della striscia
-#define LENSTRIP 164
-#define RESOLUTION 1.0 / 10000
+#define LENSTRIP 160  // 32 led per metro
+#define RESOLUTION 1.0 / 10000 // 0,1 ms
 //  910=0,1 Millisecondi di chiamata passo per passo 15 sec ogni 25m =164
-#define MCD 18 // 18= (15sec/25m =passo al metro x5m attuali=3sec /164 led= 18ms= passo reale per 5m
-
-#define DECIMAL_TIMER 10
+//#define MCD 18 // 18= (15sec/25m =passo al metro x5m attuali=3sec /164 led= 18ms= passo reale per 5m
+#define MCD 1 // PER RISOLUZIONE DI 0,1 ms
+//#define DECIMAL_TIMER 10
+#define DECIMAL_TIMER 800// 180 PASSO PER AVER VELOCITA DI 15SEC SU 25M
 #define DELAY_START_SWIMMER 30        //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_2 60      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_3 90      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
-#define DELAY_FOREACH_REPETITION 3824 // = 15sec/passo 15/0.018 =824
-#define DELAY_FOREACH_SERIES 3296     //Pausa per ogni serie di vasche =60/0.018=3296
+//#define tSecRipetizioni 3824 // = 15sec/passo 15/0.018 =824
+//#define tSecSerie 3296     //Pausa per ogni serie di vasche =60/0.018=3296
 
 // Input da Tastiera e Bluetooth \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
   // #include "utility.h"
@@ -73,7 +74,7 @@ char keys[ROWS][COLS] =
 byte colPins[COLS] = {37, 36, 35, 34}; // Pin di arduino connessi ai pin 5,6,7,8 delle righe del keypad
 byte rowPins[ROWS] = {41, 40, 39, 38}; // Pin di arduino connessi ai pin 5,6,7,8 delle righe del keypad
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
-int Val_Numerico = 0; //variabile di costruzione valore unmerico da associare alla variabile nRipetizioni.....Sec_Recuper
+int Val_Numerico = 0; //variabile di costruzione valore unmerico da associare alla variabile totRipetizioni.....Sec_Recuper
 /*   KeyPad=         1 -2 -3 -4 -5 -6 -7 -8
   arduino_1_   PIN=  9 -8 -7 -6 -5 -4 -3 -2
   arduino Mega PIN= 22-23-24-25-26-27-28-29
@@ -85,30 +86,30 @@ int Val_Numerico = 0; //variabile di costruzione valore unmerico da associare al
 volatile unsigned long count_times = 0;
 volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 bool goSwimmer1 = false, goSwimmer2 = false, goSwimmer3 = false, goSwimmer4 = false;
-uint8_t tPartenza = 0, nVasche = 3, dStartSwimmer = 3;
-uint8_t nSwimmer, nRipetizioni, nSerie, totrip, totSecSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
-int Distanza, lVasca, tSecRecupero = 0, tMinRecupero = 0, tSecSerie = 0, tSecAndatura = 0;
+uint8_t tPartenza = 0, totVasche = 0, dStartSwimmer = 3;
+uint8_t nSwimmer, totRipetizioni, totSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
+int Distanza, lVasca, tSecRipetizioni = 0, tMinRecupero = 0, tSecSerie = 0, tSecAndatura = 0;
 // variabili nascoste su utility
 // swimmer from 94 to 146 main.cpp
-//p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, totvasche= numero vasche,totrip=numero ripetizioni,totSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
-Swimmer s1; //(5, 0, 1, 255,   0,    0,nVasche, 2, 2, LENSTRIP, 0,DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
-Swimmer s2; //(5, 0, 1,   0, 255,    0,nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER, DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
-Swimmer s3; //(5, 0, 1,   0,   0,  255,nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
-Swimmer s4; //(5, 0, 1, 255,   0,  255,nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_3, DELAY_FOREACH_REPETITION,DELAY_FOREACH_SERIES);
+//p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, p_totVasche= numero vasche,tSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
+Swimmer s1; //(5, 0, 1, 255,   0,    0,totVasche, 2, 2, LENSTRIP, 0,tSecRipetizioni,tSecSerie);
+Swimmer s2; //(5, 0, 1,   0, 255,    0,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER, tSecRipetizioni,tSecSerie);
+Swimmer s3; //(5, 0, 1,   0,   0,  255,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, tSecRipetizioni,tSecSerie);
+Swimmer s4; //(5, 0, 1, 255,   0,  255,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_3, tSecRipetizioni,tSecSerie);
 
 void resetParams()
 { // reset parametri di input from 168 to184 main.cpp
   nSwimmer = 1;
   dStartSwimmer = 0;
-  nRipetizioni = 1;
-  nSerie = 1;
+  totRipetizioni = 0;
+  totSerie = 0;
   Distanza = 0;
   mAndatura = 0;
   sAndatura = 0;
   tSecAndatura = 0;
   mRecupero = 0;
   sRecupero = 0;
-  tSecRecupero = 0;
+  tSecRipetizioni = 0;
   tMinRecupero = 0;
   mSerie = 0;
   sSerie = 0;
@@ -168,8 +169,8 @@ void summaryInput()
   Lcd_Length_String("Swimmer", 0, 0, true, nSwimmer);
 
   Lcd_Length_String("Delay to start", 0, 1, true, dStartSwimmer);
-  Lcd_Length_String("Ripetitions", 0, 2, true, nRipetizioni);
-  Lcd_Length_String("Series", 0, 3, true, nSerie);
+  Lcd_Length_String("Ripetitions", 0, 2, true, totRipetizioni);
+  Lcd_Length_String("Series", 0, 3, true, totSerie);
   delay(1500);
   lcd.clear();
   Lcd_Length_String("Distance", 0, 0, true, Distanza);
@@ -190,14 +191,16 @@ void summaryInput()
 
 void calculation()
 {
-  nVasche = Distanza / 25;
+  totVasche = Distanza / 25;
 
   tSecAndatura = (mAndatura * 60);
   tSecAndatura = tSecAndatura + (sAndatura);
-  tSecRecupero = (mRecupero * 60);
-  tSecRecupero = tSecRecupero + (sRecupero);
+  tSecRipetizioni = (mRecupero * 60);
+  tSecRipetizioni = tSecRipetizioni + (sRecupero);
+  tSecRipetizioni = tSecRipetizioni * 18 *3;
   tSecSerie = (mSerie * 60);
   tSecSerie = (tSecSerie + sSerie);
+  tSecSerie = tSecSerie *18*3;
 } // end calculation
 
 void setup()
@@ -237,8 +240,8 @@ void setup()
         lcd.clear();
         Lcd_Length_String("Swimmer", 0, 0, false, nSwimmer);
         Lcd_Length_String("Delay to start", 0, 1, false, dStartSwimmer);
-        Lcd_Length_String("Ripetitions", 0, 2, false, nRipetizioni);
-        Lcd_Length_String("Series", 0, 3, false, nSerie);
+        Lcd_Length_String("Ripetitions", 0, 2, false, totRipetizioni);
+        Lcd_Length_String("Series", 0, 3, false, totSerie);
       }
 
       else if (key == 'B') //input da Bluetooth
@@ -253,7 +256,7 @@ void setup()
           Serial.println("Mancano : " + String(N_COMMANDS - i - 1) + " comandi");
         }
         Serial.println("fine 10 comandi e stampo a video prima e seconda parte di tutti.");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 11; i++)
         {
           String s = ricevute[i];
           String prima_parte = getMeString(s);
@@ -264,10 +267,10 @@ void setup()
             nSwimmer = seconda_parte;
           else if (prima_parte == "dStartSwimmer")
             dStartSwimmer = seconda_parte;
-          else if (prima_parte == "nRipetizioni")
-            nRipetizioni = seconda_parte;
-          else if (prima_parte == "nSerie")
-            nSerie = seconda_parte;
+          else if (prima_parte == "totRipetizioni")
+            totRipetizioni = seconda_parte;
+          else if (prima_parte == "totSerie")
+            totSerie = seconda_parte;
           else if (prima_parte == "Distanza")
             Distanza = seconda_parte;
           else if (prima_parte == "mAndatura")
@@ -285,10 +288,15 @@ void setup()
         }               // end input BlueTooth
         summaryInput(); //riepilogo input dati
         calculation();
-        //Serial.println("nVasche"+nVasche);
-        Serial.println("nVasche");
-        Serial.println(nVasche);
-        Serial.println("fine stampa___xxxxx");
+        Serial.print("totVasche=" + totVasche);
+        Serial.println(totVasche);
+        Serial.print("crociera in sec");
+        Serial.println(tSecAndatura);
+        Serial.print("Recupero in sec");
+        Serial.println(tSecRipetizioni);
+        Serial.print("Recuperoserie in sec");
+        Serial.println(tSecSerie);
+        Serial.println("fine stampa_da bt");
         is_inputTastiera = true; // disabilita tastiera
         //Serial.println ("Bluetooth attivo");
 
@@ -314,8 +322,8 @@ void setup()
           {
             Lcd_Length_String("Swimmer", 0, 0, true, nSwimmer);              //1
             Lcd_Length_String("Delay to start", 0, 1, false, dStartSwimmer); //2
-            Lcd_Length_String("Ripetitions", 0, 2, false, nRipetizioni);     //3
-            Lcd_Length_String("Series", 0, 3, false, nSerie);                //4
+            Lcd_Length_String("Ripetitions", 0, 2, false, totRipetizioni);     //3
+            Lcd_Length_String("Series", 0, 3, false, totSerie);                //4
             Val_Numerico = 0;                                                // a zero per preparare il nuovo valore
           }
           else
@@ -335,8 +343,8 @@ void setup()
           {
             Lcd_Length_String("Swimmer", 0, 0, true, nSwimmer);             //1
             Lcd_Length_String("Delay to start", 0, 1, true, dStartSwimmer); //2
-            Lcd_Length_String("Series", 0, 3, false, nSerie);               //4
-            Lcd_Length_String("Ripetitions", 0, 2, false, nRipetizioni);    //3
+            Lcd_Length_String("Series", 0, 3, false, totSerie);               //4
+            Lcd_Length_String("Ripetitions", 0, 2, false, totRipetizioni);    //3
             Val_Numerico = 0;                                               // a zero per preparare il nuovo valore
           }
           else
@@ -351,36 +359,36 @@ void setup()
           }
           break;
         case 3: // num di ripetizioni
-          nRipetizioni = Val_Numerico;
-          if ((nRipetizioni < 50) && (nRipetizioni >= 0)) // Limite delle ripetizioni minore di 50 and maggiore di 1
+          totRipetizioni = Val_Numerico;
+          if ((totRipetizioni < 50) && (totRipetizioni >= 0)) // Limite delle ripetizioni minore di 50 and maggiore di 1
           {
             Lcd_Length_String("Swimmer", 0, 0, true, nSwimmer);
             Lcd_Length_String("Delay to start", 0, 1, true, dStartSwimmer);
-            Lcd_Length_String("Ripetitions", 0, 2, true, nRipetizioni);
-            Lcd_Length_String("Series", 0, 3, false, nSerie);
+            Lcd_Length_String("Ripetitions", 0, 2, true, totRipetizioni);
+            Lcd_Length_String("Series", 0, 3, false, totSerie);
             Val_Numerico = 0; // a zero per preparare il nuovo valore
           }
           else
           {
-            Lcd_Length_String("Out of Range", 0, 2, false, nRipetizioni);
+            Lcd_Length_String("Out of Range", 0, 2, false, totRipetizioni);
             delay(2000);
-            Lcd_Length_String("Range <1 <50", 0, 2, false, nRipetizioni);
+            Lcd_Length_String("Range <1 <50", 0, 2, false, totRipetizioni);
             delay(2000);
-            Lcd_Length_String("Ripetitions", 0, 2, false, nRipetizioni);
+            Lcd_Length_String("Ripetitions", 0, 2, false, totRipetizioni);
             Val_Numerico = 0;
             countReturn--;
           }
           break;
-        case 4: //num di Serie
+        case 4: //num di totSerie
 
-          nSerie = Val_Numerico;
-          // if ( (nSerie<10) && (nSerie>=1)  && (countReturn==2))  // Limite delle ripetizioni minore di 10 and maggiore di 1
-          if ((nSerie < 10) && (nSerie >= 1)) // Limite delle ripetizioni minore di 10 and maggiore di 1
+          totSerie = Val_Numerico;
+          // if ( (totSerie<10) && (totSerie>=1)  && (countReturn==2))  // Limite delle ripetizioni minore di 10 and maggiore di 1
+          if ((totSerie < 10) && (totSerie >= 1)) // Limite delle ripetizioni minore di 10 and maggiore di 1
           {
             Lcd_Length_String("Swimmer", 0, 0, true, nSwimmer);
             Lcd_Length_String("Delay to start", 0, 1, true, dStartSwimmer);
-            Lcd_Length_String("Ripetitions", 0, 2, true, nRipetizioni);
-            Lcd_Length_String("Series", 0, 3, true, nSerie);
+            Lcd_Length_String("Ripetitions", 0, 2, true, totRipetizioni);
+            Lcd_Length_String("Series", 0, 3, true, totSerie);
             Val_Numerico = 0; // azzero per preparare il nuovo valore
             delay(1000);
             lcd.clear();
@@ -391,11 +399,11 @@ void setup()
           }
           else
           {
-            Lcd_Length_String("Out of Range", 0, 3, false, nSerie);
+            Lcd_Length_String("Out of Range", 0, 3, false, totSerie);
             delay(2000);
-            Lcd_Length_String("Range <1 <10", 0, 3, false, nSerie);
+            Lcd_Length_String("Range <1 <10", 0, 3, false, totSerie);
             delay(2000);
-            Lcd_Length_String("Series", 0, 3, false, nSerie);
+            Lcd_Length_String("Series", 0, 3, false, totSerie);
             Val_Numerico = 0;
             countReturn--;
           }
@@ -408,7 +416,7 @@ void setup()
             Lcd_Length_String("Cruise in min.", 0, 1, false, mAndatura);
             Lcd_Length_String("Cruise in sec.", 0, 2, false, sAndatura);
             Lcd_Length_String("Ricovery min.", 0, 3, false, mRecupero);
-            // nVasche=Distanza/25;
+            // totVasche=Distanza/25;
             Val_Numerico = 0; // azzero per preparare il nuovo valore
           }
           else
@@ -480,7 +488,7 @@ void setup()
             Lcd_Length_String("Cruise in sec.", 0, 2, true, sAndatura);
             Lcd_Length_String("Ricovery min.", 0, 3, true, mRecupero);
             Val_Numerico = 0; // azzero per preparare il nuovo valore
-            // tSecRecupero=(mRecupero*60);
+            // tSecRipetizioni=(mRecupero*60);
             delay(2000);
             lcd.clear();
             Lcd_Length_String("Ric. seconds", 0, 0, false, sRecupero);
@@ -507,7 +515,7 @@ void setup()
             Lcd_Length_String("Ric.Series min.", 0, 1, false, mSerie);
             Lcd_Length_String("Ric.Series sec.", 0, 2, false, sSerie);
             Val_Numerico = 0; // azzero per preparare il nuovo valore
-            // tSecRecupero=tSecRecupero+(sRecupero);
+            // tSecRipetizioni=tSecRipetizioni+(sRecupero);
           }
           else
           {
@@ -521,7 +529,7 @@ void setup()
             sRecupero = 0;
           }
           break;
-        case 10: //input minuti Recupero Serie
+        case 10: //input minuti Recupero totSerie
           mSerie = Val_Numerico;
           if ((mSerie < 10)) // Limite dei minuti di Recupero
           {
@@ -569,7 +577,16 @@ void setup()
           break;
         case 12:
           summaryInput(); //riepilogo input dati
-          calculation();  // calcola nVasche tSecAndatura,tSecRecupero,totSecSerie
+          calculation();  // calcola totVasche tSecAndatura,tSecRipetizioni,tSecSerie
+          Serial.print("totVasche=" + totVasche);
+          Serial.println(totVasche);
+          Serial.print("crociera in sec");
+          Serial.println(tSecAndatura);
+          Serial.print("Recupero in sec");
+          Serial.println(tSecRipetizioni);
+          Serial.print("Recuperoserie in sec");
+          Serial.println(tSecSerie);
+          Serial.println("fine stampa_da kpad");
         default:
           break;
         }
@@ -614,11 +631,19 @@ void setup()
       goSwimmer4 = true;
     }
   } //End nSwimmer attivi
+  Serial.print("totVasche=" + totVasche);
+  Serial.println(totVasche);
+  Serial.print("crociera in sec");
+  Serial.println(tSecAndatura);
+  Serial.print("Recupero in sec");
+  Serial.println(tSecRipetizioni);
+  Serial.print("Recuperoserie in sec");
+  Serial.println(tSecSerie);
   //Qui inserisci al posto dei numeri le variabili con i valori.
-  s1.init(5, 0, 1, 255, 0, 0, nVasche, 2, 2, LENSTRIP, 0, DELAY_FOREACH_REPETITION, DELAY_FOREACH_SERIES);
-  s2.init(5, 0, 1, 0, 255, 0, nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER, DELAY_FOREACH_REPETITION, DELAY_FOREACH_SERIES);
-  s3.init(5, 0, 1, 0, 0, 255, nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, DELAY_FOREACH_REPETITION, DELAY_FOREACH_SERIES);
-  s4.init(5, 0, 1, 255, 0, 255, nVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_3, DELAY_FOREACH_REPETITION, DELAY_FOREACH_SERIES);
+  s1.init(5, 0, 1, 255, 0, 0, totVasche, totRipetizioni, totSerie, LENSTRIP, 0, tSecRipetizioni, tSecSerie);
+  s2.init(5, 0, 1, 0, 255, 0, totVasche, totRipetizioni, totSerie, LENSTRIP, DELAY_START_SWIMMER, tSecRipetizioni, tSecSerie);
+  s3.init(5, 0, 1, 0, 0, 255, totVasche, totRipetizioni, totSerie, LENSTRIP, DELAY_START_SWIMMER_2, tSecRipetizioni, tSecSerie);
+  s4.init(5, 0, 1, 255, 0, 255, totVasche, totRipetizioni, totSerie, LENSTRIP, DELAY_START_SWIMMER_3, tSecRipetizioni, tSecSerie);
 }
 
 void loop()

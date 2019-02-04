@@ -4,9 +4,9 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
-// uint8_t nRipetizioni, nSerie, totrip, totSecSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
- //int Distanza, lVasca,tSecRecupero = 0, tMinRecupero = 0,tSecSerie = 0, tSecAndatura = 0;
-// uint8_t      nSwimmer, tPartenza = 0,nVasche, dStartSwimmer=3;
+// uint8_t totRipetizioni, totSerie, tSecSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
+ //int Distanza, lVasca,tSecRipetizioni = 0, tMinRecupero = 0,tSecSerie = 0, tSecAndatura = 0;
+// uint8_t      nSwimmer, tPartenza = 0,totVasche, dStartSwimmer=3;
 
 
 String getMeString(String s){
