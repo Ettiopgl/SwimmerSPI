@@ -6,11 +6,11 @@ Swimmer::Swimmer()
 {
 }
 
-void Swimmer::init(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int p_totVasche, unsigned int p_totrip, unsigned int p_totSerie, unsigned int p_strip_length, unsigned int p_delay_step = 0, unsigned int p_delay_repetition = 0, unsigned int p_delay_series = 0)
+void Swimmer::init(unsigned int p_nLed, unsigned int p_pos, unsigned int p_step, unsigned int p_r, unsigned int p_g, unsigned int p_b, unsigned int p_totVasche, unsigned int p_totrip, unsigned int p_totSerie, unsigned int p_strip_length, unsigned int p_delay_step, unsigned long p_delay_repetition, unsigned long p_delay_series)
 {
   totVasche = p_totVasche ; // numero di vasche per ripetizione
-  if(totVasche % 2 == 1)
-  istotVascheOdd = true;
+  if(totVasche % 2 != 0)
+    istotVascheOdd = true;
 // dddd
   totRip = p_totrip;           // totale ripetizioni
   // tSecSerie = tSecSerie; // totale serie
@@ -37,71 +37,15 @@ void Swimmer::doStep()
   if (start_neg < 0)
     start_neg = 0;
   pos += step; //incrementa di uno step
-  Serial.print("pos/doStep=");
-  Serial.println(pos);
-  Serial.print("nRipetizioni=");
- Serial.println(nRipetizioni);
+  //Serial.print("pos/doStep=");
+//  Serial.println(pos);
+  //Serial.print("nRipetizioni=");
+ //Serial.println(nRipetizioni);
   if (pos >=strip_length )  // se siamo a fine vasca  -1
   {
-    nVasche++;
-    isfirstTime = false ; // prima vasca
-    Serial.print("nVasche/totVasche =");
-    Serial.print(nVasche);
-    Serial.print("/");
-    Serial.println(totVasche);
-    if (nVasche >= totVasche)
-    { //Fine Ripetizione 50..100 così via
-      if (delay_repetition > 0)
-      { //Attendo delay_repetition
-          time_call = 0;
-        delay_step = delay_repetition;  //////////////////////////////////??????????????????????????
-if(istotVascheOdd)
-        totVasche =totVasche +1;
-      }
-      Serial.print("delay_repetition to dostep=");
-      Serial.println(delay_repetition);
-      //isRipRagg = true; // ---->62
-       nVasche = 0;
-
-
-      nRipetizioni++;
-      Serial.print("nRipetizioni/totRip in doStep");
-      Serial.print(nRipetizioni);
-      Serial.print("/");
-      Serial.println(totRip);
-      if (nRipetizioni == totRip)
-      {
-isRipRagg = true;
-        if (delay_series > 0)
-        { //Attendo delay_series
-          time_call = 0;
-          delay_step = delay_series;
-        }
-        Serial.print("delay_series to dostep series");
-        Serial.println(delay_series);
-        isSerieRagg = true;
-        nSerie++;
-        Serial.print("nSerie doStep/totSerie =");
-        Serial.print(nSerie);
-        Serial.print("/");
-        Serial.println(totSerie);
-        nRipetizioni = 0;
-        // if (nSerie == tSecSerie) // variabile sbagliata tSecSerie
-      if (nSerie == totSerie)
-        { // QUI DEVE FERMARSI DEFINITIVAMENTE
-          if (delay_series > 0)
-          { //Attendo delay_series
-            time_call = 0;
-            Serial.print("Fine SERIE");
-            Serial.println(nSerie);
-            delay_step = delay_series * 10; // QUI DEVE FERMARSI DEFINITIVAMENTE
-
-          }
-          isSerieTotRagg = true;
-        }
-      }
-    }
+    gestione_serie();
   }
+  isfirstTime = false ; // prima vasca
 }
 
 void Swimmer::undoStep()
@@ -110,71 +54,49 @@ void Swimmer::undoStep()
   if (finish_neg >  strip_length)
     finish_neg = strip_length - 1;
   pos -= step;
-  Serial.print("pos/undoStep=");
-  Serial.println(pos);
+  //Serial.print("pos/undoStep=");
+  //Serial.println(pos);
   if (pos <= 0)
-  { //Fine vasca
-    nVasche++;
-  //  time_call = 0;  // ----->106
-    Serial.print("nVasche/totVasche ritorno=");
-    Serial.print(nVasche);
-    Serial.print("/");
-    Serial.println(totVasche);
-    if (nVasche >= totVasche)
-    {
-      if (delay_repetition > 0)
-      {
-        time_call =0;
-        delay_step = delay_repetition;
-        if(istotVascheOdd)
-                totVasche =totVasche -1;
-      }
-      //isRipRagg = true; // --->>104
-      Serial.print("delay_repetition to undostep");
-      Serial.println(delay_repetition);
-    nVasche = 0;
-
-
-
-      nRipetizioni++;
-      Serial.print("nRipetizioni/totRip in undoStep");
-      Serial.print(nRipetizioni);
-      Serial.print("/");
-      Serial.println(totRip);
-      if (nRipetizioni == totRip)
-      {
-isRipRagg = true;
-        if (delay_series > 0)
-        { //Attendo delay_series
-          time_call = 0;
-          delay_step = delay_series;
-        }
-        nSerie++;
-        Serial.print("delay_series to undostep");
-        Serial.println(delay_series);
-        Serial.print("nSerie undoStep/totSerie =");
-        Serial.print(nSerie);
-        Serial.print("/");
-        Serial.println(totSerie);
-        nRipetizioni = 0;
-        //isSerieRagg = true;
-      //  if (nSerie == tSecSerie) anche qui variabile sbagliata tSecSerie == tempo tot in sec serie
-        if (nSerie == totSerie)
-        { // QUI DEVE FERMARSI DEFINITIVAMENTE
-          if (delay_series > 0)
-          { //Attendo delay_series
-            time_call = 0;
-            Serial.print("Fine SERIE");
-            Serial.println(nSerie);
-            delay_step = delay_series * 10; // QUI DEVE FERMARSI DEFINITIVAMENTE
-
-          }
-
-          isSerieRagg = true;
-        }
-      }
-    }
+  {
+    gestione_serie();
   }
+}
+
+void Swimmer::gestione_serie(){
+  {
+    nVasche++;
+    if (nVasche >= totVasche) {
+        Serial.print("fine ripetizione undostep");
+        if (delay_repetition > 0) {
+            time_call = 0;
+            delay_step = delay_repetition;
+            if (istotVascheOdd)
+                totVasche = totVasche - 1;
+        }
+        nVasche = 0;
+
+        nRipetizioni++;
+        if (nRipetizioni == totRip) {
+            isRipRagg = true;
+            if (delay_series > 0) { //Attendo delay_series
+                time_call = 0;
+                delay_step = delay_series;
+            }
+            nSerie++;
+            nRipetizioni = 0;
+            if (nSerie == totSerie)
+            {
+                if (delay_series > 0) {
+                    time_call = 0;
+                    delay_step = delay_series * 10;
+                    nSerie = 0;
+                }
+
+                isSerieRagg = true;
+            }
+        }
+    }
+}
 }
 
 unsigned int Swimmer::getNvasche()
@@ -236,7 +158,7 @@ void Swimmer::autoStep()
                                // doStep();
                                // }
 
-  else  if (nVasche % 2 == 1)   //1  /// or  nVasche == 0 and nRipetizioni ==1
+  else  if (nVasche % 2 != 0)   //1  /// or  nVasche == 0 and nRipetizioni ==1
     {
     undoStep();
   }

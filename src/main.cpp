@@ -11,16 +11,16 @@
   SPI.transfer(B);
 
 // lungheza della striscia
-#define LENSTRIP 160  // 32 led per metro
+#define LENSTRIP 800  // 32 led per metro
 #define RESOLUTION 1.0 / 10000 // 0,1 ms
 //  910=0,1 Millisecondi di chiamata passo per passo 15 sec ogni 25m =164
 //#define MCD 18 // 18= (15sec/25m =passo al metro x5m attuali=3sec /164 led= 18ms= passo reale per 5m
 #define MCD 1 // PER RISOLUZIONE DI 0,1 ms
 //#define DECIMAL_TIMER 10
-#define DECIMAL_TIMER 180//  PASSO PER AVER VELOCITA DI 15SEC SU 25M con 800 non va in errore 
-#define DELAY_START_SWIMMER 30        //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
-#define DELAY_START_SWIMMER_2 60      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
-#define DELAY_START_SWIMMER_3 90      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+//#define DECIMAL_TIMER 375//    375 Step2/Step1 188 PASSO PER AVER VELOCITA DI 15SEC SU 25M con 800 non va in errore metà con step=2
+#define DELAY_START_SWIMMER 80       // 160 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_START_SWIMMER_2 160    // 320 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_START_SWIMMER_3  240    //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 //#define tSecRipetizioni 3824 // = 15sec/passo 15/0.018 =824
 //#define tSecSerie 3296     //Pausa per ogni serie di vasche =60/0.018=3296
 
@@ -58,6 +58,7 @@ bool fine_ricezione_stringa = false;
 String prima_parte;
 int seconda_parte;
 byte k = 0; // conto quanti ";" arrivano  x deteminare la fine immissione dati
+uint64_t universal_decimal_timer = 0;
 // fine gestione bluetooth//
 
 // input tastiera
@@ -87,8 +88,11 @@ volatile unsigned long count_times = 0;
 volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 bool goSwimmer1 = false, goSwimmer2 = false, goSwimmer3 = false, goSwimmer4 = false;
 uint8_t tPartenza = 0, totVasche = 0, dStartSwimmer = 3;
-uint8_t nSwimmer, totRipetizioni, totSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
-int Distanza, lVasca, tSecRipetizioni = 0, tMinRecupero = 0, tSecSerie = 0, tSecAndatura = 0;
+//uint8_t nSwimmer, totRipetizioni, totSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
+int nSwimmer, totRipetizioni, totSerie;
+unsigned long  mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
+int Distanza, lVasca;
+uint32_t tSecRipetizioni = 0, tMinRecupero = 0, tSecSerie = 0, tSecAndatura = 0;
 // variabili nascoste su utility
 // swimmer from 94 to 146 main.cpp
 //p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, p_totVasche= numero vasche,tSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
@@ -144,13 +148,13 @@ void printStrip()
     }
   }
   SPI.endTransaction();
-  delayMicroseconds(511);
+  delayMicroseconds(505);
 }
 
 void base_dei_tempi()
 {
   count_times++;
-  if (count_times >= DECIMAL_TIMER && !to_print)
+  if (count_times >= universal_decimal_timer && !to_print)
   {
     s1.autoStep();
     s2.autoStep();
@@ -192,15 +196,23 @@ void summaryInput()
 void calculation()
 {
   totVasche = Distanza / 25;
+  tSecAndatura = ((mAndatura * 60) + (sAndatura))*10000;// espresso in 0.1ms
+    // Andatura ==     DECIMAL_TIMER= (tSecAndatura\totVasche)\LENSTRIP
+    Serial.print("mRecupero = "+String(mRecupero));
+    Serial.print("sRecupero = "+String(sRecupero));
+  tSecRipetizioni = ((mRecupero * 60) + (sRecupero))*10000; // espresso in 0.1ms
+  Serial.print("tSecRipetizioni = "+String(tSecRipetizioni));
+  //tSecRipetizioni = tSecRipetizioni * 18 *3;
+  universal_decimal_timer = tSecAndatura / (totVasche * LENSTRIP);
 
-  tSecAndatura = (mAndatura * 60);
-  tSecAndatura = tSecAndatura + (sAndatura);
-  tSecRipetizioni = (mRecupero * 60);
-  tSecRipetizioni = tSecRipetizioni + (sRecupero);
-  tSecRipetizioni = tSecRipetizioni * 18 *3;
+  tSecRipetizioni = tSecRipetizioni /universal_decimal_timer;
+
   tSecSerie = (mSerie * 60);
-  tSecSerie = (tSecSerie + sSerie);
-  tSecSerie = tSecSerie *18*3;
+  tSecSerie = (tSecSerie + sSerie)*10000; // espresso in 0.1ms
+  // tSecSerie = tSecSerie *18*3;
+
+tSecSerie = tSecSerie / universal_decimal_timer;
+
 } // end calculation
 
 void setup()
