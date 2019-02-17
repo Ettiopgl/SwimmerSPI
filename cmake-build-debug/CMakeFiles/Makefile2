@@ -256,7 +256,7 @@ clean: CMakeFiles/PLATFORMIO_UPLOADFS.dir/clean
 CMakeFiles/SwimmerSPI.dir/all:
 	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/depend
 	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target SwimmerSPI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target SwimmerSPI"
 .PHONY : CMakeFiles/SwimmerSPI.dir/all
 
 # Include target in all.
@@ -266,7 +266,7 @@ all: CMakeFiles/SwimmerSPI.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SwimmerSPI.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SwimmerSPI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/SwimmerSPI.dir/rule
