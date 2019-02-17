@@ -3,16 +3,16 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_TEST" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOAD" />
+      <config projectName="SwimmerSPI" targetName="SwimmerSPI" />
       <config projectName="SwimmerSPI" targetName="DEBUG" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="SwimmerSPI" targetName="SwimmerSPI" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_BUILD" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPDATE_ALL" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOADFS" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPDATE_ALL" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_BUILD" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOAD" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOADFS" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -44,6 +44,8 @@
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/HelloWorld/HelloWorld.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/HelloWorld/HelloWorld.pde" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility.h" afterDir="false" />
     </list>
     <ignored path="platformio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,11 +77,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="547" column="51" lean-forward="true" selection-start-line="547" selection-start-column="51" selection-end-line="547" selection-end-column="51" />
+            <state relative-caret-position="1972">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -97,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -107,7 +118,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>pos</find>
+      <find>static_cast&lt;uint32_t&gt;(seconda_parte)</find>
+      <find>to_print</find>
     </findStrings>
+    <replaceStrings>
+      <replace>seconda_parte</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,6 +134,7 @@
         <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" />
         <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/utility.h" />
       </list>
     </option>
   </component>
@@ -281,25 +298,26 @@
       <updated>1435919971910</updated>
       <workItem from="1550398624005" duration="599000" />
       <workItem from="1550399600311" duration="658000" />
+      <workItem from="1550414881651" duration="197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1257000" />
+    <option name="totallyTimeSpent" value="1454000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1916" y="0" width="1928" height="1084" extended-state="6" />
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
-      <window_info id="Project" order="0" visible="true" weight="0.25612354" />
+      <window_info id="Project" order="0" visible="true" weight="0.25878593" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="CMake" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info active="true" anchor="bottom" id="Messages" order="6" visible="true" weight="0.3291536" />
       <window_info anchor="right" id="Database" order="0" />
     </layout>
   </component>
@@ -322,13 +340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -336,10 +347,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="547" column="51" lean-forward="true" selection-start-line="547" selection-start-column="51" selection-end-line="547" selection-end-column="51" />
+        <state relative-caret-position="1972">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

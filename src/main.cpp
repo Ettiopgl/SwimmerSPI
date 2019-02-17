@@ -200,31 +200,31 @@ void setup() {
                 Serial.println("fine 10 comandi e stampo a video prima e seconda parte di tutti.");
                 for (const auto &s : ricevute) {
                     String prima_parte = getMeString(s);
-                    int seconda_parte = getMeValue(s);
+                    uint32_t seconda_parte = getMeValue(s);
                     Serial.println(prima_parte);
                     Serial.println(seconda_parte);
                     if (prima_parte == "nSwimmer")
-                        nSwimmer = static_cast<uint32_t>(seconda_parte);
+                        nSwimmer = seconda_parte;
                     else if (prima_parte == "dStartSwimmer")
-                        dStartSwimmer = static_cast<uint32_t>(seconda_parte);
+                        dStartSwimmer = seconda_parte;
                     else if (prima_parte == "totRipetizioni")
-                        totRipetizioni = static_cast<uint32_t>(seconda_parte);
+                        totRipetizioni = seconda_parte;
                     else if (prima_parte == "totSerie")
-                        totSerie = static_cast<uint32_t>(seconda_parte);
+                        totSerie = seconda_parte;
                     else if (prima_parte == "Distanza")
-                        Distanza = static_cast<uint32_t>(seconda_parte);
+                        Distanza = seconda_parte;
                     else if (prima_parte == "mAndatura")
-                        mAndatura = static_cast<uint32_t>(seconda_parte);
+                        mAndatura = seconda_parte;
                     else if (prima_parte == "sAndatura")
-                        sAndatura = static_cast<uint32_t>(seconda_parte);
+                        sAndatura = seconda_parte;
                     else if (prima_parte == "mRecupero")
-                        mRecupero = static_cast<uint32_t>(seconda_parte);
+                        mRecupero = seconda_parte;
                     else if (prima_parte == "sRecupero")
-                        sRecupero = static_cast<uint32_t>(seconda_parte);
+                        sRecupero = seconda_parte;
                     else if (prima_parte == "mSerie")
-                        mSerie = static_cast<uint32_t>(seconda_parte);
+                        mSerie = seconda_parte;
                     else if (prima_parte == "sSerie")
-                        sSerie = static_cast<uint32_t>(seconda_parte);
+                        sSerie = seconda_parte;
                 }               // end input BlueTooth
                 summaryInput(); //riepilogo input dati
                 calculation();

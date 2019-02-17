@@ -12,14 +12,14 @@ String getMeString(String s) {
     return first_part;
 }//getMeString
 
-int getMeValue(String s) {
+uint32_t getMeValue(String s) {
     String second_part = "";
     unsigned int i = 0;
     while (s[i] != '=' && i < s.length()) { i++; }
     i++;
     while (s[i] != ';' && i < s.length())
         second_part += s[i++];
-    return static_cast<int>(second_part.toInt());
+    return static_cast<uint32_t>(second_part.toInt());
 }//getMeValue
 
 String waitStringFromBt() {
