@@ -22,9 +22,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/platformio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/platformio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/examples/FlashLed/FlashLed.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/examples/FlashLed/FlashLed.pde" afterDir="false" />
@@ -47,16 +44,6 @@
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/HelloWorld/HelloWorld.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/HelloWorld/HelloWorld.pde" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeListsPrivate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeListsPrivate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SwimmerSPI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SwimmerSPI.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/note.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/note.txt" afterDir="false" />
     </list>
     <ignored path="platformio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="252">
+              <caret line="547" column="51" lean-forward="true" selection-start-line="547" selection-start-column="51" selection-end-line="547" selection-end-column="51" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -293,16 +280,15 @@
       <option name="presentableId" value="Default" />
       <updated>1435919971910</updated>
       <workItem from="1550398624005" duration="599000" />
-      <workItem from="1550399600311" duration="564000" />
+      <workItem from="1550399600311" duration="658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1163000" />
+    <option name="totallyTimeSpent" value="1257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1916" y="0" width="1928" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" order="0" visible="true" weight="0.25612354" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -352,8 +338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="252">
+          <caret line="547" column="51" lean-forward="true" selection-start-line="547" selection-start-column="51" selection-end-line="547" selection-end-column="51" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
