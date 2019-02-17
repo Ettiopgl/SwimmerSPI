@@ -5,7 +5,7 @@
 
 typedef struct {
     byte r, g, b;
-}SwimmerColor;
+} SwimmerColor;
 
 class Swimmer {
 private:

@@ -227,6 +227,33 @@ PLATFORMIO_PROGRAM/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make CMakeFiles/PLATFORMIO_PROGRAM.dir/build
 .PHONY : PLATFORMIO_PROGRAM/fast
 
+.piolibdeps/FlexiTimer2/FlexiTimer2.o: .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o
+
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.o
+
+# target to build an object file
+.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o:
+	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o
+
+.piolibdeps/FlexiTimer2/FlexiTimer2.i: .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i
+
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.i
+
+# target to preprocess a source file
+.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i:
+	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i
+
+.piolibdeps/FlexiTimer2/FlexiTimer2.s: .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s
+
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.s
+
+# target to generate assembly for a file
+.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s:
+	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s
+.PHONY : .piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s
+
 .piolibdeps/Keyboard/src/Keyboard.o: .piolibdeps/Keyboard/src/Keyboard.cpp.o
 
 .PHONY : .piolibdeps/Keyboard/src/Keyboard.o
@@ -308,60 +335,6 @@ PLATFORMIO_PROGRAM/fast:
 	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.s
 .PHONY : .piolibdeps/Keypad/src/Keypad.cpp.s
 
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.o: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.o
-
-# target to build an object file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o
-
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.i: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.i
-
-# target to preprocess a source file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i
-
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.s: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.s
-
-# target to generate assembly for a file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s
-
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.o: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.o
-
-# target to build an object file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o
-
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.i: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.i
-
-# target to preprocess a source file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i
-
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.s: .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s
-
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.s
-
-# target to generate assembly for a file
-.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s
-.PHONY : .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s
-
 .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.o: .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o
 
 .PHONY : .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.o
@@ -388,60 +361,6 @@ PLATFORMIO_PROGRAM/fast:
 .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s:
 	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s
 .PHONY : .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s
-
-lib/FlexiTimer2/FlexiTimer2.o: lib/FlexiTimer2/FlexiTimer2.cpp.o
-
-.PHONY : lib/FlexiTimer2/FlexiTimer2.o
-
-# target to build an object file
-lib/FlexiTimer2/FlexiTimer2.cpp.o:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o
-.PHONY : lib/FlexiTimer2/FlexiTimer2.cpp.o
-
-lib/FlexiTimer2/FlexiTimer2.i: lib/FlexiTimer2/FlexiTimer2.cpp.i
-
-.PHONY : lib/FlexiTimer2/FlexiTimer2.i
-
-# target to preprocess a source file
-lib/FlexiTimer2/FlexiTimer2.cpp.i:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.i
-.PHONY : lib/FlexiTimer2/FlexiTimer2.cpp.i
-
-lib/FlexiTimer2/FlexiTimer2.s: lib/FlexiTimer2/FlexiTimer2.cpp.s
-
-.PHONY : lib/FlexiTimer2/FlexiTimer2.s
-
-# target to generate assembly for a file
-lib/FlexiTimer2/FlexiTimer2.cpp.s:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.s
-.PHONY : lib/FlexiTimer2/FlexiTimer2.cpp.s
-
-lib/MsTimer2/MsTimer2.o: lib/MsTimer2/MsTimer2.cpp.o
-
-.PHONY : lib/MsTimer2/MsTimer2.o
-
-# target to build an object file
-lib/MsTimer2/MsTimer2.cpp.o:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o
-.PHONY : lib/MsTimer2/MsTimer2.cpp.o
-
-lib/MsTimer2/MsTimer2.i: lib/MsTimer2/MsTimer2.cpp.i
-
-.PHONY : lib/MsTimer2/MsTimer2.i
-
-# target to preprocess a source file
-lib/MsTimer2/MsTimer2.cpp.i:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.i
-.PHONY : lib/MsTimer2/MsTimer2.cpp.i
-
-lib/MsTimer2/MsTimer2.s: lib/MsTimer2/MsTimer2.cpp.s
-
-.PHONY : lib/MsTimer2/MsTimer2.s
-
-# target to generate assembly for a file
-lib/MsTimer2/MsTimer2.cpp.s:
-	$(MAKE) -f CMakeFiles/SwimmerSPI.dir/build.make CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.s
-.PHONY : lib/MsTimer2/MsTimer2.cpp.s
 
 lib/Swimmer/Swimmer.o: lib/Swimmer/Swimmer.cpp.o
 
@@ -514,6 +433,9 @@ help:
 	@echo "... PLATFORMIO_CLEAN"
 	@echo "... PLATFORMIO_TEST"
 	@echo "... PLATFORMIO_PROGRAM"
+	@echo "... .piolibdeps/FlexiTimer2/FlexiTimer2.o"
+	@echo "... .piolibdeps/FlexiTimer2/FlexiTimer2.i"
+	@echo "... .piolibdeps/FlexiTimer2/FlexiTimer2.s"
 	@echo "... .piolibdeps/Keyboard/src/Keyboard.o"
 	@echo "... .piolibdeps/Keyboard/src/Keyboard.i"
 	@echo "... .piolibdeps/Keyboard/src/Keyboard.s"
@@ -523,21 +445,9 @@ help:
 	@echo "... .piolibdeps/Keypad/src/Keypad.o"
 	@echo "... .piolibdeps/Keypad/src/Keypad.i"
 	@echo "... .piolibdeps/Keypad/src/Keypad.s"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.o"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.i"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.s"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.o"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.i"
-	@echo "... .piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.s"
 	@echo "... .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.o"
 	@echo "... .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.i"
 	@echo "... .piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.s"
-	@echo "... lib/FlexiTimer2/FlexiTimer2.o"
-	@echo "... lib/FlexiTimer2/FlexiTimer2.i"
-	@echo "... lib/FlexiTimer2/FlexiTimer2.s"
-	@echo "... lib/MsTimer2/MsTimer2.o"
-	@echo "... lib/MsTimer2/MsTimer2.i"
-	@echo "... lib/MsTimer2/MsTimer2.s"
 	@echo "... lib/Swimmer/Swimmer.o"
 	@echo "... lib/Swimmer/Swimmer.i"
 	@echo "... lib/Swimmer/Swimmer.s"

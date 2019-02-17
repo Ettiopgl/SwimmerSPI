@@ -57,9 +57,22 @@ include CMakeFiles/SwimmerSPI.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SwimmerSPI.dir/flags.make
 
+CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
+CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o: ../.piolibdeps/FlexiTimer2/FlexiTimer2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o"
+	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp
+
+CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i"
+	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keyro90/Documents/SwimmerSPI/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp > CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.i
+
+CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s"
+	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.s
+
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o: ../.piolibdeps/Keyboard/src/Keyboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keyboard/src/Keyboard.cpp
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.s: cmake_force
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o: ../.piolibdeps/Keypad/src/Key.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad/src/Key.cpp
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.s: cmake_force
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o: ../.piolibdeps/Keypad/src/Keypad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad/src/Keypad.cpp
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.i: cmake_force
@@ -96,35 +109,9 @@ CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.s"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad/src/Keypad.cpp -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.s
 
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o: ../.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp
-
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp > CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.i
-
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.s
-
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o: ../.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp
-
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp > CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.i
-
-CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.s
-
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o: ../.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o -c /home/keyro90/Documents/SwimmerSPI/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp
 
 CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.i: cmake_force
@@ -135,35 +122,9 @@ CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp -o CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.s
 
-CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
-CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o: ../lib/FlexiTimer2/FlexiTimer2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o -c /home/keyro90/Documents/SwimmerSPI/lib/FlexiTimer2/FlexiTimer2.cpp
-
-CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.i"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keyro90/Documents/SwimmerSPI/lib/FlexiTimer2/FlexiTimer2.cpp > CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.i
-
-CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.s"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/lib/FlexiTimer2/FlexiTimer2.cpp -o CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.s
-
-CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
-CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o: ../lib/MsTimer2/MsTimer2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o -c /home/keyro90/Documents/SwimmerSPI/lib/MsTimer2/MsTimer2.cpp
-
-CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.i"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keyro90/Documents/SwimmerSPI/lib/MsTimer2/MsTimer2.cpp > CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.i
-
-CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.s"
-	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keyro90/Documents/SwimmerSPI/lib/MsTimer2/MsTimer2.cpp -o CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.s
-
 CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o: ../lib/Swimmer/Swimmer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o -c /home/keyro90/Documents/SwimmerSPI/lib/Swimmer/Swimmer.cpp
 
 CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.i: cmake_force
@@ -176,7 +137,7 @@ CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.s: cmake_force
 
 CMakeFiles/SwimmerSPI.dir/src/main.cpp.o: CMakeFiles/SwimmerSPI.dir/flags.make
 CMakeFiles/SwimmerSPI.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SwimmerSPI.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SwimmerSPI.dir/src/main.cpp.o"
 	/home/keyro90/.platformio/packages/toolchain-atmelavr/bin/avr-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SwimmerSPI.dir/src/main.cpp.o -c /home/keyro90/Documents/SwimmerSPI/src/main.cpp
 
 CMakeFiles/SwimmerSPI.dir/src/main.cpp.i: cmake_force
@@ -189,33 +150,27 @@ CMakeFiles/SwimmerSPI.dir/src/main.cpp.s: cmake_force
 
 # Object files for target SwimmerSPI
 SwimmerSPI_OBJECTS = \
+"CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o" \
-"CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o" \
-"CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o" \
-"CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o" \
-"CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o" \
 "CMakeFiles/SwimmerSPI.dir/src/main.cpp.o"
 
 # External object files for target SwimmerSPI
 SwimmerSPI_EXTERNAL_OBJECTS =
 
+SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keyboard/src/Keyboard.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Key.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad/src/Keypad.cpp.o
-SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/Keypad.cpp.o
-SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148/src/includes/Key.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/.piolibdeps/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o
-SwimmerSPI: CMakeFiles/SwimmerSPI.dir/lib/FlexiTimer2/FlexiTimer2.cpp.o
-SwimmerSPI: CMakeFiles/SwimmerSPI.dir/lib/MsTimer2/MsTimer2.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/lib/Swimmer/Swimmer.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/src/main.cpp.o
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/build.make
 SwimmerSPI: CMakeFiles/SwimmerSPI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable SwimmerSPI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keyro90/Documents/SwimmerSPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable SwimmerSPI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SwimmerSPI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

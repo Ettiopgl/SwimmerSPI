@@ -1,9 +1,8 @@
 #include "utility.h"
-#include <Arduino.h>
 #include <Swimmer.h>
 #include <Keypad.h>
-#include <SoftwareSerial.h>
 #include <LiquidCrystal_I2C.h>
+
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 #include <FlexiTimer2.h>

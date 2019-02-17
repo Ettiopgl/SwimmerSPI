@@ -70,7 +70,7 @@ void lcd_print(LiquidCrystal_I2C &lcd, String Row1, byte xPos, byte yPos, bool c
 //////fine  gestione lcd
 
 // Messaggio di avvio
-void inputMessage(LiquidCrystal_I2C& lcd) {
+void inputMessage(LiquidCrystal_I2C &lcd) {
     // Print a inputMessage to the LCD. from 154 to 188 line main.cpp
     lcd.backlight();
     lcd.setCursor(3, 0);

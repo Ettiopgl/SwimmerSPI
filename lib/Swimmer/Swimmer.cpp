@@ -100,7 +100,7 @@ void Swimmer::autoStep() {
     }
 }
 
-SwimmerColor Swimmer::getColors(){
+SwimmerColor Swimmer::getColors() {
     return colors;
 }
 
