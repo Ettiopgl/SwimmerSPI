@@ -1,19 +1,17 @@
 #include "Swimmer.h"
 
 
-Swimmer::Swimmer() {
-}
+Swimmer::Swimmer() = default;
 
-void Swimmer::init(unsigned int p_nLed, unsigned int p_step, byte p_r, byte p_g,
-                   byte p_b, unsigned int p_totVasche, unsigned int p_totrip, unsigned int p_totSerie,
-                   unsigned int p_strip_length, unsigned int p_delay_step, unsigned long p_delay_repetition,
+void Swimmer::init(uint32_t p_nLed, byte p_r, byte p_g,
+                   byte p_b, uint32_t p_totVasche, uint32_t p_totrip, uint32_t p_totSerie,
+                   uint32_t p_strip_length, uint32_t p_delay_step, unsigned long p_delay_repetition,
                    unsigned long p_delay_series) {
     totVasche = p_totVasche; // numero di vasche per ripetizione
     istotVascheOdd = totVasche % 2 != 0; //se dispari...
     totRip = p_totrip;           // totale ripetizioni
     totSerie = p_totSerie; // totale serie
     nLed = p_nLed;             // numero led segmento
-    step = p_step;             // numero degli step  (salto tra un led e l'altro )
     colors.r = p_r;
     colors.g = p_g;
     colors.b = p_b;
@@ -23,7 +21,7 @@ void Swimmer::init(unsigned int p_nLed, unsigned int p_step, byte p_r, byte p_g,
     delay_series = p_delay_series;
 }
 
-unsigned int Swimmer::getNled() {
+uint32_t Swimmer::getNled() {
     return nLed;
 }
 

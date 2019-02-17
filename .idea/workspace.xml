@@ -3,13 +3,13 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_TEST" />
-      <config projectName="SwimmerSPI" targetName="SwimmerSPI" />
-      <config projectName="SwimmerSPI" targetName="DEBUG" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPDATE_ALL" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_BUILD" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOAD" />
+      <config projectName="SwimmerSPI" targetName="DEBUG" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_PROGRAM" />
+      <config projectName="SwimmerSPI" targetName="SwimmerSPI" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_BUILD" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
@@ -22,6 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/platformio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/platformio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" afterDir="false" />
@@ -46,30 +48,15 @@
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/examples/SerialDisplay/SerialDisplay.pde" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C/library.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeListsPrivate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeListsPrivate.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SwimmerSPI.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SwimmerSPI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SwimmerSPI.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/note.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/note.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/note.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/note.txt" afterDir="false" />
     </list>
     <ignored path="platformio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,11 +76,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformio.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="340">
+              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -102,13 +119,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lcd</find>
-      <find>Lcd_Length_String(</find>
-      <find>inputMessage</find>
+      <find>pos</find>
     </findStrings>
-    <replaceStrings>
-      <replace>Lcd_Length_String(lcd,</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,16 +128,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utility.h" />
-        <option value="$PROJECT_DIR$/platformio.ini" />
+        <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" />
+        <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2174" />
-    <option name="width" value="1232" />
-    <option name="height" value="712" />
+    <option name="x" value="1916" />
+    <option name="width" value="1928" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -143,7 +155,6 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -159,22 +170,6 @@
             <path>
               <item name="SwimmerSPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
-              <item name=".pioenvs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwimmerSPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
-              <item name=".pioenvs" type="462c0819:PsiDirectoryNode" />
-              <item name="megaatmega2560" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwimmerSPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
-              <item name=".piolibdeps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwimmerSPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -182,6 +177,11 @@
               <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="Swimmer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SwimmerSPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SwimmerSPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,7 +196,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/platformio.ini" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -292,29 +292,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1435919971910</updated>
-      <workItem from="1550397015548" duration="917000" />
+      <workItem from="1550398624005" duration="599000" />
+      <workItem from="1550399600311" duration="564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="917000" />
+    <option name="totallyTimeSpent" value="1163000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="1916" y="0" width="1928" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.16080937" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Messages" visible="true" weight="0.3291536" />
-      <window_info anchor="bottom" id="Find" />
-      <window_info anchor="bottom" id="CMake" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="right" id="Database" />
+      <window_info id="Project" order="0" visible="true" weight="0.25612354" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="CMake" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="right" id="Database" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,37 +328,35 @@
       <collection />
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148" />
-    </ignored-roots>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utility.h">
+    <entry file="file://$PROJECT_DIR$/platformio.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="41" column="100" selection-start-line="41" selection-start-column="94" selection-end-line="41" selection-end-column="100" />
+        <state relative-caret-position="187">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="105" selection-start-line="11" selection-start-column="105" selection-end-line="11" selection-end-column="105" />
+        <state relative-caret-position="289">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platformio.ini">
+    <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+        <state relative-caret-position="340">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

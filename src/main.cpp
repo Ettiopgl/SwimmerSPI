@@ -19,6 +19,7 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 #define DELAY_START_SWIMMER 80       // 160 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_2 160    // 320 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_3  240    //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define LENGTH_SEGMENT_SWIMMER 5
 
 
 #define Reset_AVR()      \
@@ -30,7 +31,7 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 bool is_inputTastiera = false;
 uint32_t universal_decimal_timer = 0;
-int countReturn;
+uint32_t countReturn;
 const byte ROWS = 4; //4 righe
 const byte COLS = 4; //4 colonne
 char keys[ROWS][COLS] =
@@ -48,20 +49,18 @@ int Val_Numerico = 0;
 volatile unsigned long count_times = 0;
 volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 bool goSwimmer1 = false, goSwimmer2 = false, goSwimmer3 = false, goSwimmer4 = false;
-int dStartSwimmer = 3;
-int totVasche = 0;
+uint32_t dStartSwimmer = 3;
+uint32_t totVasche = 0;
 
-int nSwimmer, totRipetizioni, totSerie;
-int sSerie;
-int mSerie;
-int mRecupero;
-int sRecupero;
-int sAndatura;
-int mAndatura;
-int Distanza;
-int tSecAndatura = 0;
-int tSecSerie = 0;
-int tSecRipetizioni = 0;
+uint32_t nSwimmer, totRipetizioni, totSerie;
+uint32_t sSerie;
+uint32_t mSerie;
+uint32_t mRecupero;
+uint32_t sRecupero;
+uint32_t sAndatura;
+uint32_t mAndatura;
+uint32_t Distanza;
+unsigned long tSecAndatura = 0, tSecSerie = 0, tSecRipetizioni = 0;
 
 
 Swimmer s1;
@@ -149,8 +148,8 @@ void calculation() {
     tSecAndatura = ((mAndatura * 60) + (sAndatura)) * 10000;// espresso in 0.1ms
     tSecRipetizioni = ((mRecupero * 60) + (sRecupero)) * 10000; // espresso in 0.1ms
     universal_decimal_timer = static_cast<uint32_t>(tSecAndatura / (totVasche * LENSTRIP));
-    tSecRipetizioni = static_cast<int>(tSecRipetizioni / universal_decimal_timer);
-    tSecSerie = static_cast<int>((((mSerie * 60) + sSerie) * 10000) / universal_decimal_timer);
+    tSecRipetizioni = static_cast<unsigned long>(static_cast<int>(tSecRipetizioni / universal_decimal_timer));
+    tSecSerie = static_cast<unsigned long>(static_cast<int>((((mSerie * 60) + sSerie) * 10000) / universal_decimal_timer));
 
 } // end calculation
 
@@ -205,27 +204,27 @@ void setup() {
                     Serial.println(prima_parte);
                     Serial.println(seconda_parte);
                     if (prima_parte == "nSwimmer")
-                        nSwimmer = seconda_parte;
+                        nSwimmer = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "dStartSwimmer")
-                        dStartSwimmer = seconda_parte;
+                        dStartSwimmer = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "totRipetizioni")
-                        totRipetizioni = seconda_parte;
+                        totRipetizioni = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "totSerie")
-                        totSerie = seconda_parte;
+                        totSerie = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "Distanza")
-                        Distanza = seconda_parte;
+                        Distanza = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "mAndatura")
-                        mAndatura = seconda_parte;
+                        mAndatura = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "sAndatura")
-                        sAndatura = seconda_parte;
+                        sAndatura = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "mRecupero")
-                        mRecupero = seconda_parte;
+                        mRecupero = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "sRecupero")
-                        sRecupero = seconda_parte;
+                        sRecupero = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "mSerie")
-                        mSerie = seconda_parte;
+                        mSerie = static_cast<uint32_t>(seconda_parte);
                     else if (prima_parte == "sSerie")
-                        sSerie = seconda_parte;
+                        sSerie = static_cast<uint32_t>(seconda_parte);
                 }               // end input BlueTooth
                 summaryInput(); //riepilogo input dati
                 calculation();
@@ -254,7 +253,7 @@ void setup() {
                 countReturn++; // conta quante volte ho premuto *
                 switch (countReturn) {
                     case 1: // Num Swimmer
-                        nSwimmer = Val_Numerico;
+                        nSwimmer = static_cast<uint32_t>(Val_Numerico);
                         if ((nSwimmer < 10) &&
                             (nSwimmer >= 1)) // Limite delle ripetizioni minore di 10 and maggiore di 1
                         {
@@ -274,7 +273,7 @@ void setup() {
                         }
                         break;
                     case 2: // delay partenza swimmwer
-                        dStartSwimmer = Val_Numerico;
+                        dStartSwimmer = static_cast<uint32_t>(Val_Numerico);
                         if ((dStartSwimmer < 10) && (dStartSwimmer >= 0)) {
                             lcd_print(lcd, "Swimmer", 0, 0, true, nSwimmer);             //1
                             lcd_print(lcd, "Delay to start", 0, 1, true, dStartSwimmer); //2
@@ -292,7 +291,7 @@ void setup() {
                         }
                         break;
                     case 3: // num di ripetizioni
-                        totRipetizioni = Val_Numerico;
+                        totRipetizioni = static_cast<uint32_t>(Val_Numerico);
                         if ((totRipetizioni < 50) &&
                             (totRipetizioni >= 0)) // Limite delle ripetizioni minore di 50 and maggiore di 1
                         {
@@ -313,7 +312,7 @@ void setup() {
                         break;
                     case 4: //num di totSerie
 
-                        totSerie = Val_Numerico;
+                        totSerie = static_cast<uint32_t>(Val_Numerico);
 
                         if ((totSerie < 10) &&
                             (totSerie >= 1)) // Limite delle ripetizioni minore di 10 and maggiore di 1
@@ -340,7 +339,7 @@ void setup() {
                         }
                         break;
                     case 5: // Distanza
-                        Distanza = Val_Numerico;
+                        Distanza = static_cast<uint32_t>(Val_Numerico);
                         if ((Distanza < 2000) &&
                             (Distanza >= 25)) // Limite della Distanza minore di 10 and maggiore di 1
                         {
@@ -364,7 +363,7 @@ void setup() {
                         }
                         break;
                     case 6: //input Minuti crociera
-                        mAndatura = Val_Numerico;
+                        mAndatura = static_cast<uint32_t>(Val_Numerico);
                         if ((mAndatura < 35)) // Limite dei minuti di Crociera
                         {
                             lcd_print(lcd, "Cruise in sec.", 0, 2, false, sAndatura);
@@ -385,7 +384,7 @@ void setup() {
                         }
                         break;
                     case 7: //input Secondi crociera
-                        sAndatura = Val_Numerico;
+                        sAndatura = static_cast<uint32_t>(Val_Numerico);
                         if ((sAndatura < 59)) // Limite dei minuti di Crociera
                         {
                             lcd_print(lcd, "Ricovery min.", 0, 3, false, mRecupero);
@@ -406,7 +405,7 @@ void setup() {
                         }
                         break;
                     case 8: //input Minuti Recupero
-                        mRecupero = Val_Numerico;
+                        mRecupero = static_cast<uint32_t>(Val_Numerico);
                         if ((mRecupero < 10)) // Limite dei minuti di Recupero
                         {
                             lcd_print(lcd, "Series", 0, 0, true, Distanza);
@@ -432,7 +431,7 @@ void setup() {
                         }
                         break;
                     case 9: //input Secondi Recupero
-                        sRecupero = Val_Numerico;
+                        sRecupero = static_cast<uint32_t>(Val_Numerico);
                         if ((sRecupero < 59)) // Limite dei minuti di Recupero
                         {
                             lcd_print(lcd, "Ric. seconds", 0, 0, true, sRecupero);
@@ -452,7 +451,7 @@ void setup() {
                         }
                         break;
                     case 10: //input minuti Recupero totSerie
-                        mSerie = Val_Numerico;
+                        mSerie = static_cast<uint32_t>(Val_Numerico);
                         if ((mSerie < 10)) // Limite dei minuti di Recupero
                         {
                             lcd_print(lcd, "Ric. seconds", 0, 0, true, sRecupero);
@@ -472,7 +471,7 @@ void setup() {
                         }
                         break;
                     case 11: // recupero serie in sec
-                        sSerie = Val_Numerico;
+                        sSerie = static_cast<uint32_t>(Val_Numerico);
                         if ((sSerie < 60)) // Limite dei minuti di Recupero
                         {
                             lcd_print(lcd, "Ric. seconds", 0, 0, true, sRecupero);
@@ -545,21 +544,21 @@ void setup() {
     Serial.print("Recuperoserie in sec");
     Serial.println(String(tSecSerie));
 
-    s1.init(5, 1, 255, 0, 0, static_cast<unsigned int>(totVasche), static_cast<unsigned int>(totRipetizioni),
-            static_cast<unsigned int>(totSerie), LENSTRIP, 0, static_cast<unsigned long>(tSecRipetizioni),
-            static_cast<unsigned long>(tSecSerie));
-    s2.init(5, 1, 0, 255, 0, static_cast<unsigned int>(totVasche), static_cast<unsigned int>(totRipetizioni),
-            static_cast<unsigned int>(totSerie), LENSTRIP, DELAY_START_SWIMMER,
-            static_cast<unsigned long>(tSecRipetizioni),
-            static_cast<unsigned long>(tSecSerie));
-    s3.init(5, 1, 0, 0, 255, static_cast<unsigned int>(totVasche), static_cast<unsigned int>(totRipetizioni),
-            static_cast<unsigned int>(totSerie), LENSTRIP, DELAY_START_SWIMMER_2,
-            static_cast<unsigned long>(tSecRipetizioni),
-            static_cast<unsigned long>(tSecSerie));
-    s4.init(5, 1, 255, 0, 255, static_cast<unsigned int>(totVasche), static_cast<unsigned int>(totRipetizioni),
-            static_cast<unsigned int>(totSerie), LENSTRIP, DELAY_START_SWIMMER_3,
-            static_cast<unsigned long>(tSecRipetizioni),
-            static_cast<unsigned long>(tSecSerie));
+    s1.init(LENGTH_SEGMENT_SWIMMER, 255, 0, 0, totVasche, totRipetizioni,
+            totSerie, LENSTRIP, 0, tSecRipetizioni,
+            tSecSerie);
+    s2.init(LENGTH_SEGMENT_SWIMMER, 0, 255, 0, totVasche, totRipetizioni,
+            totSerie, LENSTRIP, DELAY_START_SWIMMER,
+            tSecRipetizioni,
+            tSecSerie);
+    s3.init(LENGTH_SEGMENT_SWIMMER, 0, 0, 255, totVasche, totRipetizioni,
+            totSerie, LENSTRIP, DELAY_START_SWIMMER_2,
+            tSecRipetizioni,
+            tSecSerie);
+    s4.init(LENGTH_SEGMENT_SWIMMER, 255, 0, 255, totVasche, totRipetizioni,
+            totSerie, LENSTRIP, DELAY_START_SWIMMER_3,
+            tSecRipetizioni,
+            tSecSerie);
 }
 
 #pragma clang diagnostic pop
