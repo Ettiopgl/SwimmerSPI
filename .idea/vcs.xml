@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.piolibdeps/Keyboard" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.piolibdeps/Keypad" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.piolibdeps/Keypad@src-7c51a0317981891d7acb86668af6e148" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.piolibdeps/LiquidCrystal_I2C" vcs="Git" />
+  </component>
+</project>

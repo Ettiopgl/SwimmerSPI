@@ -25,14 +25,14 @@ tPartenza NON ADOPERATO
 totVasche = numero di vasche
 dStartSwimmer ritardo partenza nuotatori  ( da inserire adesso è fisso)
 nSwimmer numero di swimmer
- mAndatura minuti andatura
+ mAndatura minuti int
  sAndatura secondi andatura
  mRecupero minuti di recupero
  sRecupero secondi  di recupero
  mSerie minuti di recupero
  sSerie secondi di REcupero
  Distanza metri della ripetizione
-lVasca lunghezza della vasca fissa
+lVasca lunghezza della vasca int
 tSecRipetizioni totale secondi ripetizione 
 tMinRecupero totale minuti di Recupero
 tSecSerie totale secondi di Recupero Series

@@ -13,7 +13,7 @@ String getMeString(String s){
   String first_part = "";
   unsigned int i = 0;
   while(s[i] != '=' && i < s.length())
-  first_part += s[i++];
+    first_part += s[i++];
   return first_part;
 }//getMeString
 
@@ -23,8 +23,8 @@ int getMeValue(String s){
   while(s[i] != '=' && i < s.length()){i++;}
   i++;
   while(s[i] != ';' && i < s.length())
-  second_part += s[i++];
-  return second_part.toInt();
+    second_part += s[i++];
+  return static_cast<int>(second_part.toInt());
 }//getMeValue
 
 String waitStringFromBt(){
@@ -46,7 +46,7 @@ String waitStringFromBt(){
 void Lcd_Length_String(String Row1,byte xPos,byte yPos,bool cursorOn,long result)
 {
 
-  byte nSpace;            //  numero spazi
+  unsigned int nSpace;            //  numero spazi
   String backSpace =" ";// stringa con uno spazio
   String sRow1 = Row1;
   String Equal = "=";
