@@ -89,13 +89,17 @@ void printStrip() {
     SPIClass::beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));
     for (unsigned int i = 0; i < LENSTRIP; i++) {
         if (goSwimmer1 && i >= s1.getPos() && i < s1.getNled() + s1.getPos()) {
-            PRINTLED(s1.getColors().r, s1.getColors().g, s1.getColors().b);
+            SwimmerColor colors = s1.getColors();
+            PRINTLED(colors.r, colors.g, colors.b);
         } else if (goSwimmer2 && i >= s2.getPos() && i < s2.getNled() + s2.getPos()) {
-            PRINTLED(s2.getColors().r, s2.getColors().g, s2.getColors().b);
+            SwimmerColor colors = s2.getColors();
+            PRINTLED(colors.r, colors.g, colors.b);
         } else if (goSwimmer3 && i >= s3.getPos() && i < s3.getNled() + s3.getPos()) {
-            PRINTLED(s3.getColors().r, s3.getColors().g, s3.getColors().b);
+            SwimmerColor colors = s3.getColors();
+            PRINTLED(colors.r, colors.g, colors.b);
         } else if (goSwimmer4 && i >= s4.getPos() && i < s4.getNled() + s4.getPos()) {
-            PRINTLED(s4.getColors().r, s4.getColors().g, s4.getColors().b);
+            SwimmerColor colors = s4.getColors();
+            PRINTLED(colors.r, colors.g, colors.b);
         } else {
             PRINTLED(0, 0, 0);
         }
