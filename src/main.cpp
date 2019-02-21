@@ -3,7 +3,7 @@
 #include <Keypad.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27, 20, 4);
+LiquidCrystal_I2C *lcd;
 
 #include <FlexiTimer2.h>
 #include <SPI.h>
@@ -117,7 +117,7 @@ void base_dei_tempi() {
 } //End Base dei tempi
 
 void summaryInput() { //riepilogo input dati da bt e tastiera
-    lcd.clear();
+    lcd->clear();
     lcd_print(lcd, "Riepilogo", 0, 0, false, 0);
     delay(1500);
     lcd_print(lcd, "Swimmer", 0, 0, true, nSwimmer);
@@ -126,19 +126,19 @@ void summaryInput() { //riepilogo input dati da bt e tastiera
     lcd_print(lcd, "Ripetitions", 0, 2, true, totRipetizioni);
     lcd_print(lcd, "Series", 0, 3, true, totSerie);
     delay(1500);
-    lcd.clear();
+    lcd->clear();
     lcd_print(lcd, "Distance", 0, 0, true, Distanza);
     lcd_print(lcd, "Cruise in min.", 0, 1, true, mAndatura);
     lcd_print(lcd, "Cruise in sec.", 0, 2, true, sAndatura);
     delay(1500);
-    lcd.clear();
+    lcd->clear();
     lcd_print(lcd, "Ricovery min.", 0, 0, true, mRecupero);
     lcd_print(lcd, "Ric. seconds", 0, 1, true, sRecupero);
     lcd_print(lcd, "Ric. Series min", 0, 2, true, mSerie);
     lcd_print(lcd, "Ric. Series sec", 0, 3, true, sSerie);
 
     delay(1000);
-    lcd.clear();
+    lcd->clear();
     lcd_print(lcd, "Press * to Go!", 0, 3, true, 0);
 
 } // end riepilogo dati
@@ -164,7 +164,8 @@ void setup() {
 
 
     Serial3.begin(38400); // Velocità di default del modulo HC-05
-    lcd.init();           // initialize the lcd
+    lcd = new LiquidCrystal_I2C(0x27, 20, 4);
+    lcd->init();           // initialize the lc
     inputMessage(lcd);
     countReturn = 0;
 
@@ -182,14 +183,14 @@ void setup() {
                 Reset_AVR();
             } else if (key == 'A') // input da tastiera
             {
-                lcd.clear();
+                lcd->clear();
                 lcd_print(lcd, "Swimmer", 0, 0, false, nSwimmer);
                 lcd_print(lcd, "Delay to start", 0, 1, false, dStartSwimmer);
                 lcd_print(lcd, "Ripetitions", 0, 2, false, totRipetizioni);
                 lcd_print(lcd, "Series", 0, 3, false, totSerie);
             } else if (key == 'B') //input da Bluetooth
             {
-                lcd.clear();
+                lcd->clear();
                 lcd_print(lcd, "  Bluetooth True", 1, 1, false, 0);
                 Serial.println("aspetto " + String(N_COMMANDS) + " comandi.");
                 String ricevute[N_COMMANDS];
@@ -323,7 +324,7 @@ void setup() {
                             lcd_print(lcd, "Series", 0, 3, true, totSerie);
                             Val_Numerico = 0; // azzero per preparare il nuovo valore
                             delay(1000);
-                            lcd.clear();
+                            lcd->clear();
                             lcd_print(lcd, "Distance", 0, 0, false, Distanza);
                             lcd_print(lcd, "Cruise in min.", 0, 1, false, mAndatura);
                             lcd_print(lcd, "Cruise in sec.", 0, 2, false, sAndatura);
@@ -415,7 +416,7 @@ void setup() {
                             Val_Numerico = 0; // azzero per preparare il nuovo valore
 
                             delay(2000);
-                            lcd.clear();
+                            lcd->clear();
                             lcd_print(lcd, "Ric. seconds", 0, 0, false, sRecupero);
                             lcd_print(lcd, "Ric. Series min", 0, 1, false, sSerie);
                             lcd_print(lcd, "Ric. Series sec", 0, 2, false, mSerie);

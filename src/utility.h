@@ -39,7 +39,7 @@ String waitStringFromBt() {
 
 #define LENGHDISPLAY 16  // LUNGHEZZA DISPLAY MENO 4
 
-void lcd_print(LiquidCrystal_I2C &lcd, String Row1, byte xPos, byte yPos, bool cursorOn, long result) {
+void lcd_print(LiquidCrystal_I2C *lcd, String Row1, byte xPos, byte yPos, bool cursorOn, long result) {
 
     unsigned int nSpace;            //  numero spazi
     String backSpace = " ";// stringa con uno spazio
@@ -52,59 +52,59 @@ void lcd_print(LiquidCrystal_I2C &lcd, String Row1, byte xPos, byte yPos, bool c
         Row1 = Row1;
     }
     sRow1.concat(Equal); // concatena = a fine stringa
-    lcd.setCursor(xPos, yPos);
-    lcd.print("                    "); // pulisce la riga
-    lcd.setCursor(xPos, yPos);
-    lcd.print(sRow1);
-    //lcd.print("  ");
-    //lcd.blink();
+    lcd->setCursor(xPos, yPos);
+    lcd->print("                    "); // pulisce la riga
+    lcd->setCursor(xPos, yPos);
+    lcd->print(sRow1);
+    //lcd->print("  ");
+    //lcd->blink();
     if (cursorOn) {   // se si scrivi il valore
-        lcd.setCursor((sRow1.length()), yPos);
-        //lcd.cursor_on(); //si posiziona alla fine
-        //lcd.print("=" );
-        lcd.print(result);
-        //lcd.scrollDisplayLeft(); // scrolla l'intero DISPLAY
+        lcd->setCursor((sRow1.length()), yPos);
+        //lcd->cursor_on(); //si posiziona alla fine
+        //lcd->print("=" );
+        lcd->print(result);
+        //lcd->scrollDisplayLeft(); // scrolla l'intero DISPLAY
     }
 }
 
 //////fine  gestione lcd
 
 // Messaggio di avvio
-void inputMessage(LiquidCrystal_I2C &lcd) {
-    // Print a inputMessage to the LCD. from 154 to 188 line main.cpp
-    lcd.backlight();
-    lcd.setCursor(3, 0);
-    lcd.print("Hello Swimmers");
-    lcd.setCursor(5, 1);
-    lcd.print("Power by");
-    lcd.setCursor(6, 2);
-    lcd.print("Alessio");
-    lcd.setCursor(2, 3);
-    lcd.print("Andrea & Michele");
+void inputMessage(LiquidCrystal_I2C *lcd) {
+    // Print a inputMessage to the lcd-> from 154 to 188 line main.cpp
+    lcd->backlight();
+    lcd->setCursor(3, 0);
+    lcd->print("Hello Swimmers");
+    lcd->setCursor(5, 1);
+    lcd->print("Power by");
+    lcd->setCursor(6, 2);
+    lcd->print("Alessio");
+    lcd->setCursor(2, 3);
+    lcd->print("Andrea & Michele");
     delay(2000);
-    lcd.clear();
-    lcd.setCursor(0, 1);
-    lcd.print("     Input dati     ");
+    lcd->clear();
+    lcd->setCursor(0, 1);
+    lcd->print("     Input dati     ");
     delay(2000);
-    lcd.setCursor(0, 0);
-    lcd.print("Cercare il canale ");
-    lcd.setCursor(0, 1);
-    lcd.print("Swimmer per input");
-    lcd.setCursor(0, 2);
-    lcd.print("dati da Bluetooth");
-    lcd.setCursor(0, 3);
-    lcd.print("poi premere B");
+    lcd->setCursor(0, 0);
+    lcd->print("Cercare il canale ");
+    lcd->setCursor(0, 1);
+    lcd->print("Swimmer per input");
+    lcd->setCursor(0, 2);
+    lcd->print("dati da Bluetooth");
+    lcd->setCursor(0, 3);
+    lcd->print("poi premere B");
 
     delay(10000);
 
-    lcd.clear();
-    lcd.print("Funtions");             // Stampo a video il AVE ...
-    lcd.setCursor(0, 1);          // 1° colonna - 2° riga
-    lcd.print("C-#-* for Clear-Reset-Return");            // e prosegue sulla stessa riga
-    lcd.setCursor(0, 2);          // 1° colonna - 3° riga
-    lcd.print("B =Go to Bluetooth"); // e prosegue sulla stessa riga
-    lcd.setCursor(0, 3);          // 1° colonna - 3° riga
-    lcd.print("A = Go to keypad");      // e prosegue sulla stessa riga
+    lcd->clear();
+    lcd->print("Funtions");             // Stampo a video il AVE ...
+    lcd->setCursor(0, 1);          // 1° colonna - 2° riga
+    lcd->print("C-#-* for Clear-Reset-Return");            // e prosegue sulla stessa riga
+    lcd->setCursor(0, 2);          // 1° colonna - 3° riga
+    lcd->print("B =Go to Bluetooth"); // e prosegue sulla stessa riga
+    lcd->setCursor(0, 3);          // 1° colonna - 3° riga
+    lcd->print("A = Go to keypad");      // e prosegue sulla stessa riga
     delay(2000);
 }
 

@@ -6,13 +6,13 @@
       <config projectName="SwimmerSPI" targetName="SwimmerSPI" />
       <config projectName="SwimmerSPI" targetName="DEBUG" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_BUILD" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO_UPLOADFS" />
-      <config projectName="SwimmerSPI" targetName="PLATFORMIO_CLEAN" />
       <config projectName="SwimmerSPI" targetName="PLATFORMIO" />
+      <config projectName="SwimmerSPI" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -22,6 +22,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/examples/FlashLed/FlashLed.pde" beforeDir="false" afterPath="$PROJECT_DIR$/.piolibdeps/FlexiTimer2/examples/FlashLed/FlashLed.pde" afterDir="false" />
@@ -65,22 +66,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platformio.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1972">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="331">
+              <caret line="149" column="58" selection-start-line="149" selection-start-column="58" selection-end-line="149" selection-end-column="58" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#132#156#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,26 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utility.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Swimmer/Swimmer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="1111">
+              <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -120,9 +95,15 @@
       <find>pos</find>
       <find>static_cast&lt;uint32_t&gt;(seconda_parte)</find>
       <find>to_print</find>
+      <find>flexitimer</find>
+      <find>lcd</find>
+      <find>calculation</find>
+      <find>summaryInput</find>
+      <find>lcd.</find>
     </findStrings>
     <replaceStrings>
       <replace>seconda_parte</replace>
+      <replace>lcd-&gt;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -133,8 +114,8 @@
       <list>
         <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.cpp" />
         <option value="$PROJECT_DIR$/lib/Swimmer/Swimmer.h" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/utility.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
@@ -299,16 +280,19 @@
       <workItem from="1550398624005" duration="599000" />
       <workItem from="1550399600311" duration="658000" />
       <workItem from="1550414881651" duration="197000" />
+      <workItem from="1550430870461" duration="841000" />
+      <workItem from="1550781540187" duration="282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1454000" />
+    <option name="totallyTimeSpent" value="2577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" order="0" visible="true" weight="0.25878593" />
+      <window_info id="Project" order="0" visible="true" weight="0.26411074" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
@@ -354,19 +338,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.piolibdeps/FlexiTimer2/FlexiTimer2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="1111">
+          <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="331">
+          <caret line="149" column="58" selection-start-line="149" selection-start-column="58" selection-end-line="149" selection-end-column="58" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#132#156#0" expanded="true" />
           </folding>
         </state>
       </provider>
