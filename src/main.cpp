@@ -13,14 +13,43 @@ LiquidCrystal_I2C *lcd;
   SPI.transfer(G);        \
   SPI.transfer(B);
 
+<<<<<<< HEAD
 #define LENSTRIP 800  // 32 led per metro
+=======
+// lungheza della striscia
+#define LENSTRIP 160  // 32 led per metro
+>>>>>>> parent of 873365d... giusti commit
 #define RESOLUTION 1.0 / 10000 // 0,1 ms
 #define MCD 1 // PER RISOLUZIONE DI 0,1 ms
+<<<<<<< HEAD
 #define DELAY_START_SWIMMER 80       // 160 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_2 160    // 320 Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define DELAY_START_SWIMMER_3  240    //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
 #define LENGTH_SEGMENT_SWIMMER 5
 
+=======
+//#define DECIMAL_TIMER 10
+#define DECIMAL_TIMER 180//  PASSO PER AVER VELOCITA DI 15SEC SU 25M con 800 non va in errore 
+#define DELAY_START_SWIMMER 30        //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_START_SWIMMER_2 60      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+#define DELAY_START_SWIMMER_3 90      //Pausa iniziale Ritarto  3 sec o 5 sec rispetto al primo
+//#define tSecRipetizioni 3824 // = 15sec/passo 15/0.018 =824
+//#define tSecSerie 3296     //Pausa per ogni serie di vasche =60/0.018=3296
+
+// Input da Tastiera e Bluetooth \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  // #include "utility.h"
+
+/////traslatore di livello
+// LV = +3.3v
+// HV = +5v
+// xxO STA PER 5V
+// xxI STA PER 3.3V
+// TXI = TX BlueTooth
+// RXI = RX BlueTooth
+// TXO = RX Arduino
+// RXO = TX Arduino
+// FINE TRASLATORE DI livello
+>>>>>>> parent of 873365d... giusti commit
 
 #define Reset_AVR()      \
   wdt_enable(WDTO_30MS); \
@@ -30,8 +59,28 @@ LiquidCrystal_I2C *lcd;
 #define N_COMMANDS 11
 
 bool is_inputTastiera = false;
+<<<<<<< HEAD
 uint32_t universal_decimal_timer = 0;
 uint32_t countReturn;
+=======
+
+#include <SoftwareSerial.h>
+// #define BT_TX_PIN 14  // 11  x arduino 1 // Per Arduino 1
+//#define BT_RX_PIN 15  // 10 per Arduino 1// Per Arduino 1
+
+// Gestione BlueTooth
+//SoftwareSerial bt(BT_RX_PIN, BT_TX_PIN); // Per Arduino 1
+String s_ricevuta = "";
+bool fine_ricezione_stringa = false;
+String prima_parte;
+int seconda_parte;
+byte k = 0; // conto quanti ";" arrivano  x deteminare la fine immissione dati
+// fine gestione bluetooth//
+
+// input tastiera
+#include <Keypad.h>
+int countReturn;
+>>>>>>> parent of 873365d... giusti commit
 const byte ROWS = 4; //4 righe
 const byte COLS = 4; //4 colonne
 char keys[ROWS][COLS] =
@@ -49,6 +98,7 @@ int Val_Numerico = 0;
 volatile unsigned long count_times = 0;
 volatile bool to_print = false; //Variabile ridondante che indica se è possibile chiamare nel loop la funzione printstrip()
 bool goSwimmer1 = false, goSwimmer2 = false, goSwimmer3 = false, goSwimmer4 = false;
+<<<<<<< HEAD
 uint32_t dStartSwimmer = 3;
 uint32_t totVasche = 0;
 
@@ -83,6 +133,36 @@ void resetParams() {
     mSerie = 0;
     sSerie = 0;
     tSecSerie = 0;
+=======
+uint8_t tPartenza = 0, totVasche = 0, dStartSwimmer = 3;
+uint8_t nSwimmer, totRipetizioni, totSerie, mAndatura, sAndatura, mRecupero, sRecupero, mSerie, sSerie;
+int Distanza, lVasca, tSecRipetizioni = 0, tMinRecupero = 0, tSecSerie = 0, tSecAndatura = 0;
+// variabili nascoste su utility
+// swimmer from 94 to 146 main.cpp
+//p_nLed=led segmento,p_pos=posizione led,p_step=step in avanti 1 2....,p_r=red ,p_g=green,p_b= blue, p_totVasche= numero vasche,tSecSerie=numero serie,p_strip_length=lung striscia,p_delay_step=ritardo partenza 3,5sec,p_delay_repetition =REcupero ripetizione ,p_delay_series = Recupero serie
+Swimmer s1; //(5, 0, 1, 255,   0,    0,totVasche, 2, 2, LENSTRIP, 0,tSecRipetizioni,tSecSerie);
+Swimmer s2; //(5, 0, 1,   0, 255,    0,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER, tSecRipetizioni,tSecSerie);
+Swimmer s3; //(5, 0, 1,   0,   0,  255,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_2, tSecRipetizioni,tSecSerie);
+Swimmer s4; //(5, 0, 1, 255,   0,  255,totVasche, 2, 2, LENSTRIP, DELAY_START_SWIMMER_3, tSecRipetizioni,tSecSerie);
+
+void resetParams()
+{ // reset parametri di input from 168 to184 main.cpp
+  nSwimmer = 1;
+  dStartSwimmer = 0;
+  totRipetizioni = 0;
+  totSerie = 0;
+  Distanza = 0;
+  mAndatura = 0;
+  sAndatura = 0;
+  tSecAndatura = 0;
+  mRecupero = 0;
+  sRecupero = 0;
+  tSecRipetizioni = 0;
+  tMinRecupero = 0;
+  mSerie = 0;
+  sSerie = 0;
+  tSecSerie = 0;
+>>>>>>> parent of 873365d... giusti commit
 } // End Reset resetParams
 
 void printStrip() {
@@ -104,6 +184,7 @@ void printStrip() {
             PRINTLED(0, 0, 0);
         }
     }
+<<<<<<< HEAD
     SPIClass::endTransaction();
     delayMicroseconds(505);
 }
@@ -118,6 +199,25 @@ void base_dei_tempi() {
         count_times = 0;
         to_print = true;
     }
+=======
+  }
+  SPI.endTransaction();
+  delayMicroseconds(511);
+}
+
+void base_dei_tempi()
+{
+  count_times++;
+  if (count_times >= DECIMAL_TIMER && !to_print)
+  {
+    s1.autoStep();
+    s2.autoStep();
+    s3.autoStep();
+    s4.autoStep();
+    count_times = 0;
+    to_print = true;
+  }
+>>>>>>> parent of 873365d... giusti commit
 } //End Base dei tempi
 
 void summaryInput() { //riepilogo input dati da bt e tastiera
@@ -147,6 +247,7 @@ void summaryInput() { //riepilogo input dati da bt e tastiera
 
 } // end riepilogo dati
 
+<<<<<<< HEAD
 void calculation() {
     totVasche = Distanza / 25;
     tSecAndatura = ((mAndatura * 60) + (sAndatura)) * 10000;// espresso in 0.1ms
@@ -164,6 +265,21 @@ void setup() {
 
     Serial.begin(9600);
     pinMode(52, OUTPUT); // SCK Arduino mega
+=======
+void calculation()
+{
+  totVasche = Distanza / 25;
+
+  tSecAndatura = (mAndatura * 60);
+  tSecAndatura = tSecAndatura + (sAndatura);
+  tSecRipetizioni = (mRecupero * 60);
+  tSecRipetizioni = tSecRipetizioni + (sRecupero);
+  tSecRipetizioni = tSecRipetizioni * 18 *3;
+  tSecSerie = (mSerie * 60);
+  tSecSerie = (tSecSerie + sSerie);
+  tSecSerie = tSecSerie *18*3;
+} // end calculation
+>>>>>>> parent of 873365d... giusti commit
 
 
 
